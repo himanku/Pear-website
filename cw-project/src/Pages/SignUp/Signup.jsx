@@ -24,16 +24,17 @@ export const Signup = () => {
     }
     setError("");
     setSubmitButtonDisabled(true)
-    createUserWithEmailAndPassword(auth, values.email, values.password).then(res=>{
+    createUserWithEmailAndPassword(auth, values.email, values.password).then(async(res)=>{
       setSubmitButtonDisabled(false);
       const user = res.user;
-      updateProfile(user,{
+      await updateProfile(user,{
         displayName:values.name,
       })
       console.log(res);
+      navigate("/login")
     }).catch((err)=>{
       setSubmitButtonDisabled(false);
-      setError('User Exist')
+      setError(err.message)
     })
 
   }
@@ -41,7 +42,7 @@ export const Signup = () => {
     <div>
       <div className={styles.container}>
         <div className={styles.innerBox}>
-          <h1 className={styles.heading}>Sign Up to Apple Store</h1>
+          <h1 className={styles.heading}>Sign Up to Pear Store</h1>
           <InputControl
             label="Name"
             placeholder="Enter your name"
