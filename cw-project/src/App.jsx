@@ -5,10 +5,7 @@ function App() {
 
   return (
     <div>
-    {/* {Comment the h2 tag and add your desired components while development} */}
-      
       <AllRoutes/>
-
     </div>
   )
 }
