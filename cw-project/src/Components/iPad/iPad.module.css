@@ -1,0 +1,16 @@
+.ipad_love{
+    border: 5px solid red;
+    display: flex;
+}
+.text{
+    border: 0.5px solid rgb(60, 12, 12);
+    text-align: center;
+    margin:auto;
+    align-items: center;
+    
+    
+   
+}
+.text h3{
+    font-weight: bold;
+}
