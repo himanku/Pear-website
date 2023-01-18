@@ -5,13 +5,13 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 
-import {getAuth} from 'firebase'
+import {getAuth} from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  apiKey: " AIzaSyB1dsXckD18v2c78msxxXSgpBi4yNRycUw",
+  authDomain: "apple-clone-bd169.firebaseapp.com",
   projectId: "apple-clone-bd169",
-  storageBucket: process.env.REACT_APP_STORAGE,
+  storageBucket: "apple-clone-bd169.firebaseapp.com",
   messagingSenderId: "927988920962",
   appId: "1:927988920962:web:2602ed955ba516ec747a9b"
 };

@@ -1,0 +1,82 @@
+@font-face {
+    font-family: sf-pro;
+    src: url(./fonts/SF-Pro-Display-Medium.ttf);
+}
+.container {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerBox {
+    min-width: 480px;
+    height: fit-content;
+    width: fit-content;
+    background-color: #fff;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.footer button {
+    outline: none;
+    border: none;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 16px;
+    width: 100%;
+    transition: 100ms;
+    font-family: sf-pro;
+}
+.footer button:hover{
+    background-color: aqua;
+    
+    
+}
+
+.footer .error{
+    text-align: center;
+    font-weight: bold;
+    font-family: sf-pro;
+    font-size: 0.875rem;
+    color: rgba(251, 48, 48, 0.985);
+}
+.footer p {
+    font-family: sf-pro;
+    font-weight: 700;
+    color: #000;
+
+}
+
+.footer p span {
+    font-family: sf-pro;
+    font-weight: bold;
+    color: rgb(0, 157, 255);
+    letter-spacing: 1px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.heading {
+    font-size: larger;
+    color: rgb(65, 64, 64);
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: sf-pro;
+}
