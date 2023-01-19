@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { InputControl } from "../../Components/InputControl/InputControl";
 import styles from "../Login/login.module.css";
+import {GoogleButton} from 'react-google-button'
 
 import { auth } from "../../firebase";
 export const Login = () => {
@@ -41,6 +42,11 @@ export const Login = () => {
   return (
     <div>
       <div className={styles.container}>
+      <video  autoPlay muted className={styles.videoPlay} loop>
+          <source src="https://www.apple.com/105/media/us/ipad-10.9/2022/4c5d6d90-d0de-429a-84f7-cf8827181a11/anim/features/large_2x.mp4"
+          type="video/mp4"
+          />
+        </video>
         <div className={styles.innerBox}>
           <h1 className={styles.heading}>Sign in to Pear Store</h1>
           <InputControl
@@ -65,6 +71,7 @@ export const Login = () => {
             <button disabled={submitButtonDisabled} onClick={handleSubmit}>
               Login
             </button>
+            <GoogleButton className={styles.google}/>
             <p>
               Not have an account ?{" "}
               <span>
