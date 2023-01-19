@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { InputControl } from "../../Components/InputControl/InputControl";
 import styles from "../Login/login.module.css";
+import {GoogleButton} from 'react-google-button'
 
 import { auth } from "../../firebase";
 export const Login = () => {
@@ -70,6 +71,7 @@ export const Login = () => {
             <button disabled={submitButtonDisabled} onClick={handleSubmit}>
               Login
             </button>
+            <GoogleButton className={styles.google}/>
             <p>
               Not have an account ?{" "}
               <span>

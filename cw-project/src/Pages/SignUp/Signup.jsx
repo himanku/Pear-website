@@ -4,6 +4,7 @@ import { InputControl } from "../../Components/InputControl/InputControl";
 import { useNavigate} from 'react-router-dom'
 import styles from "../SignUp/Signup.module.css";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {GoogleButton} from 'react-google-button'
 
 import {auth} from '../../firebase'
 
@@ -76,6 +77,7 @@ export const Signup = () => {
           <div className={styles.footer}>
             <b className={styles.error}>{error}</b>
             <button disabled={submitButtonDisabled} onClick={handleSubmit}>Sign Up</button>
+            <GoogleButton/>
             <p>
               Already have an account ?{" "}
               <span>
