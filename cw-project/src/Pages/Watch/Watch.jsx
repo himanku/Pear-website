@@ -186,7 +186,7 @@ const Watch = () => {
         <img src={watch4} alt="watch4" style={{width:"95%",margin:"auto"}} />
       </div>
       <div>
-        <img src={watch5} alt="watch5"  style={{width:"95%",margin:"auto"}}/>
+        <img src={watch5} alt="watch5"  style={{width:"96%",margin:"auto"}}/>
       </div>
     </div>
   );
