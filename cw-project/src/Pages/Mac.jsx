@@ -1,4 +1,25 @@
 import React from "react";
+/*
+  {
+    "screen":"13.6”",
+    "display":"Liquid Retina display9",
+    "chipversion":"Apple M2 chip",
+    "cpu":"8-core",
+    "gpu":"10-core",
+    "selection6":"24GB",
+    "tbsize":"2TB",
+    "selection8":"18 hrs",
+    "selection9":"",
+    "selection10":"Touch ID",
+    "music":"",
+    "weight":"",
+    "camera":"",
+    "name":"",
+    "image":"",
+    "fromPrice":"",
+    "color":""
+    },
+*/
 
 const Mac = () => {
   return (
@@ -256,8 +277,8 @@ const Mac = () => {
         </div>
       </div>
       {/* ====================================================================== */}
-      <div style={{ display: "flex" }}>
-        <div style={{ width: "45%", marginTop: "100px" }}>
+      <div style={{ display: "flex" ,height:"500px"}}>
+        <div style={{ width: "45%", marginTop: "100px",height:"500px" }}>
           <h1 style={{ fontSize: "45px", fontWeight: "bolder" }}>
             Get 3% Daily Cash <br />
             back with Apple Card.
