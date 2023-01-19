@@ -1,0 +1,44 @@
+.homepage_main_div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.single_img_data {
+  background-color: black;
+}
+.single_img_data_for_14{
+  background-color:#f8fcfd;
+}
+.single_img_data_for_gift_card{
+  background-color: rgb(188, 20, 20);
+}
+.leran_and_by {
+  color: #2997ff;
+}
+.shop_the_gift{
+  color: white;
+}
+.shop_the_gift:hover{
+  text-decoration: underline;
+}
+.leran_and_by:hover {
+  text-decoration: underline;
+}
+
+.slider_container{
+  
+  width: 90%;
+  height: 500px;
+ 
+  margin: auto;
+  margin-top: 10px;
+  background-color: aquamarine;
+}
+
+
+ /* @media screen and (min-width:600px){
+    .homepage_main_div{
+        max-width: 100%;
+    }
+ } */
