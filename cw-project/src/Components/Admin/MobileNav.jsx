@@ -29,7 +29,7 @@ export const MobileNav = ({  onOpen, ...rest }) => {
           fontWeight="bold">
           Logo
         </Text> */}
-        <Image src={logo} w={{base: "28%", sm:"17%",}} display={{ base: 'flex', md: 'none' }}/>
+        <Image src={logo} w={{base: "28%", sm:"17%"}} display={{ base: 'flex', md: 'none' }}/>
   
         <HStack spacing={{ base: '0', md: '6' }}>
           {/* <IconButton

@@ -4,7 +4,7 @@ import { MobileNav } from '../../Components/Admin/MobileNav';
 import RevenueCard from '../../Components/Admin/RevenueCard';
 import SidebarContent from '../../Components/Admin/SidebarContent'
 
-const Home = ({children}) => {
+const Home = () => {
     const { onClose, isOpen, onOpen } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
@@ -25,7 +25,6 @@ const Home = ({children}) => {
       </Drawer>
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
-        {/* {children} */}
         <RevenueCard/>
       </Box>
     </Box>
