@@ -41,6 +41,11 @@ export const Signup = () => {
   return (
     <div>
       <div className={styles.container}>
+        <video width='100%'  autoPlay muted className={styles.videoPlay} loop>
+          <source src="https://www.apple.com/105/media/us/ipad-10.9/2022/4c5d6d90-d0de-429a-84f7-cf8827181a11/anim/features/large_2x.mp4"
+          type="video/mp4"
+          />
+        </video>
         <div className={styles.innerBox}>
           <h1 className={styles.heading}>Sign Up to Pear Store</h1>
           <InputControl

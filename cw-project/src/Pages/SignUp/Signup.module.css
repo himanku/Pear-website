@@ -12,7 +12,12 @@
     align-items: center;
 }
 
+.container .videoPlay{
+    position: relative;
+}
+
 .innerBox {
+    position: absolute;
     min-width: 480px;
     height: fit-content;
     width: fit-content;
