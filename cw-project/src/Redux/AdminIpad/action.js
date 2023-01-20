@@ -1,5 +1,5 @@
 import axios from "axios"
-import { ADMIN_ADD_TASK_FAILURE, ADMIN_ADD_TASK_REQUEST, ADMIN_ADD_TASK_SUCCESS, ADMIN_DELETE_TASK_FAILURE, ADMIN_DELETE_TASK_REQUEST, ADMIN_DELETE_TASK_SUCCESS, ADMIN_GET_TASKS_FAILURE, ADMIN_GET_TASKS_REQUEST, ADMIN_GET_TASKS_SUCCESS, ADMIN_UPDATE_TASK_FAILURE, ADMIN_UPDATE_TASK_REQUEST, ADMIN_UPDATE_TASK_SUCCESS } from "./actionTypes"
+import { ADMIN_ADD_TASK_FAILURE, ADMIN_ADD_TASK_REQUEST, ADMIN_ADD_TASK_SUCCESS, ADMIN_DELETE_TASK_FAILURE, ADMIN_DELETE_TASK_REQUEST, ADMIN_DELETE_TASK_SUCCESS, ADMIN_GET_TASKS_FAILURE, ADMIN_GET_TASKS_REQUEST, ADMIN_GET_TASKS_SUCCESS, ADMIN_SINGLE_TASK_FAILURE, ADMIN_SINGLE_TASK_REQUEST, ADMIN_SINGLE_TASK_SUCCESS, ADMIN_UPDATE_TASK_FAILURE, ADMIN_UPDATE_TASK_REQUEST, ADMIN_UPDATE_TASK_SUCCESS } from "./actionTypes"
 
 //get tasks
 export const getTasks = () => (dispatch) => {
@@ -28,9 +28,9 @@ export const addTask = (payload) => (dispatch) => {
 //update task
 export const updateTask = (id, payload) => (dispatch) => {
     dispatch({type: ADMIN_UPDATE_TASK_REQUEST})
-    return axios.patch(`http://localhost:8080/ipad/${id}`, payload)
+    return axios.put(`http://localhost:8080/ipad/${id}`, payload)
     .then((res) => {
-        dispatch({type: ADMIN_UPDATE_TASK_SUCCESS, payload: res.data});
+        dispatch({type: ADMIN_UPDATE_TASK_SUCCESS});
     })
     .catch((err) => {
         dispatch({type: ADMIN_UPDATE_TASK_FAILURE})
@@ -46,5 +46,19 @@ export const deleteTask = (id) => (dispatch) => {
     })
     .catch((err) => {
         dispatch({type: ADMIN_DELETE_TASK_FAILURE})
+    })
+}
+
+//singleUser
+export const getSinglePageData = (id) => (dispatch) => {
+    dispatch({type: ADMIN_SINGLE_TASK_REQUEST})
+    return axios.get(`http://localhost:8080/ipad/${id}`)
+    .then((res) => {
+        dispatch({type: ADMIN_SINGLE_TASK_SUCCESS, payload: res.data});
+        console.log(res.data)
+    })
+    .catch((err) => {
+        dispatch({type: ADMIN_SINGLE_TASK_FAILURE})
+        console.log(err)
     })
 }
