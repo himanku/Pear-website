@@ -50,6 +50,7 @@ const dispatch = useDispatch();
       .then((res) => {
         alert('Sign In Successfully');
          navigate("/");
+         setError("");
       })
       .catch((err) => {
         setError(err.message);
@@ -83,7 +84,7 @@ const dispatch = useDispatch();
           />
 
           <div className={styles.footer}>
-            <b className={styles.error}>{error===''? Error : error}</b>
+            <b className={styles.error}>{ error}</b>
             <button disabled={btnDisable} onClick={handleSubmit}>
               Login
             </button>
