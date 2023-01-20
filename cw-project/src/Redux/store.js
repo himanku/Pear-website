@@ -1,8 +1,10 @@
 import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
 import thunk from "redux-thunk";
-import { reducer as AdminReducer } from "../Redux/Admin/reducer";
+import { reducer as AdminReducerIpad } from "../Redux/AdminIpad/reducer";
+import {reducer as AdminReducerMac} from "../Redux/AdminMac/reducer";
 
-// const rootReducer = combineReducers({
-//     admin: AdminReducer,
-// })
-export const store = legacy_createStore(AdminReducer, applyMiddleware(thunk));
+const rootReducer = combineReducers({
+    AdminReducerIpad, 
+    AdminReducerMac
+})
+export const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
