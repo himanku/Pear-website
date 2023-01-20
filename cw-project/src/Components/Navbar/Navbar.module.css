@@ -1,0 +1,10 @@
+.navbr_link_hover:hover {
+  color: white;
+}
+.leran_and_by {
+  color: #2997ff;
+}
+
+.leran_and_by:hover {
+  text-decoration: underline;
+}
