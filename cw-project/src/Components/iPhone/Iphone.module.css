@@ -1,0 +1,36 @@
+.top{
+    display: flex;
+    grid-template-columns: repeat(8,1fr);
+    
+    /* border: 1px solid brown; */
+    width: 60%;
+    margin: auto;
+    gap: 5px;
+    margin-top: 20px;
+   
+}
+.additional{
+    margin-top: 30px;
+    color: black;
+    background-color: rgb(233, 204, 204);
+    padding:5px;
+    text-align: center;
+
+}
+.beyond{
+    
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.beyond img{
+    width: 50%;
+    margin: auto;
+
+}
+.bey{
+    padding: 100px;
+}
+.bey p{
+    font-size: 30px;
+}
