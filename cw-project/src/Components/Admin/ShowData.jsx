@@ -1,7 +1,7 @@
 import { Grid } from '@chakra-ui/react';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getTasks } from '../../Redux/AdminIpad/';
+import { getTasks } from '../../Redux/AdminIpad/action';
 import Items from './Items';
 
 const ShowData = () => {
