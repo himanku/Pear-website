@@ -1,10 +1,10 @@
-import { Box, Drawer, DrawerContent, useColorModeValue, useDisclosure } from '@chakra-ui/react'
+import { Box, Drawer, DrawerContent, useColorModeValue, useDisclosure, Image } from '@chakra-ui/react'
 import React from 'react'
 import { MobileNav } from '../../Components/Admin/MobileNav';
-import ProductTabs from '../../Components/Admin/ProductTabs';
-import SidebarContent from '../../Components/Admin/SidebarContent'
+import SidebarContent from '../../Components/Admin/SidebarContent';
+import construction from "../../assets/construction.png";
 
-const Products = () => {
+const Orders = () => {
     const { onClose, isOpen, onOpen } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
@@ -25,10 +25,12 @@ const Products = () => {
       </Drawer>
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
-        <ProductTabs/>
+        <Image w="50%" src={construction} alt="under construction" m="auto" mt="150px"/>
       </Box>
+     
+      
     </Box>
   )
 }
 
-export default Products
+export default Orders
