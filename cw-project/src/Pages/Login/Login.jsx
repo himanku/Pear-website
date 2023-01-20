@@ -1,42 +1,58 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../../firebase";
+import { useDispatch, useSelector } from "react-redux";
 import { InputControl } from "../../Components/InputControl/InputControl";
 import styles from "../Login/login.module.css";
 import {GoogleButton} from 'react-google-button'
+import { loginInitiate } from "../../Redux/Authentication/action";
 
-import { auth } from "../../firebase";
 export const Login = () => {
   const [admin, setAdmin] = useState({
     email1: "abhishek1337Chatterjee@gmail.com",
     password1: 123456,
   });
-  const navigate = useNavigate();
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
+  const currentUser = useSelector((store) => {
+    // console.log(store.auth.currentUser);
+    return store.auth.currentUser;
+  })
+
+
+  const btnDisable = useSelector((store) => {
+    // console.log(store.auth.btnDisabled);
+    return store.auth.btnDisabled
+  })
+
+  const Error = useSelector((store) => {
+    // console.log(store.auth.error);
+    return store.auth.error;
+  })
+const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // const navigate = useNavigate();
   const [error, setError] = useState("");
-  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+  // const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
   const handleSubmit = () => {
     if (!values.email || !values.password) {
       setError("Fill all fields");
       return;
     }
     setError("");
-    setSubmitButtonDisabled(true);
-    signInWithEmailAndPassword(auth, values.email, values.password)
+   dispatch(loginInitiate(values.email, values.password));
+   signInWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {
-        setSubmitButtonDisabled(false);
-        console.log(res);
-        // navigate("/");
+        alert('Sign In Successfully');
+         navigate("/");
       })
       .catch((err) => {
-        setSubmitButtonDisabled(false);
-        setError('Check Email and the password');
+        setError(err.message);
       });
   };
   return (
@@ -67,8 +83,8 @@ export const Login = () => {
           />
 
           <div className={styles.footer}>
-            <b className={styles.error}>{error}</b>
-            <button disabled={submitButtonDisabled} onClick={handleSubmit}>
+            <b className={styles.error}>{error===''? Error : error}</b>
+            <button disabled={btnDisable} onClick={handleSubmit}>
               Login
             </button>
             <GoogleButton className={styles.google}/>

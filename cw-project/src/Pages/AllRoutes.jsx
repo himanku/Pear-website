@@ -8,11 +8,13 @@ import Products from './Admin/Products'
 import Users from './Admin/Users'
 import { Login } from './Login/Login'
 import { Signup } from './SignUp/Signup'
+import { Home1 } from './Home1'
 
 const AllRoutes = () => {
   return (
     <Routes>
       <Route path='/dashboard' element={<Home/>}></Route>
+      {/* <Route path='/' element={<Home1/>}></Route> */}
       <Route path='/products' element={<Products/>}></Route>
       <Route path='/orders' element={<Orders/>}></Route>
       <Route path='/users' element={<Users/>}></Route>
