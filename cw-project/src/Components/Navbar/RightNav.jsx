@@ -2,6 +2,16 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+import {useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import { useNavigate } from 'react-router-dom';
+import { logOutInitiate } from '../../Redux/Authentication/action';
+import {auth} from '../../firebase'
+import { setUser } from '../../Redux/Authentication/action'
+import { Text } from '@chakra-ui/react';
+
+
+
 
 const Ul = styled.ul`
   list-style: none;
@@ -36,6 +46,30 @@ const Ul = styled.ul`
 `;
 
 const RightNav = ({ open }) => {
+  const currentUser = useSelector((store) => {
+    // console.log(store.auth.currentUser.displayName);
+    // if(store.auth.currentUser.displayName !== null){
+    //   return store.auth.currentUser.displayName
+    // }else {
+    //   return ""
+    // }
+    
+    return store.auth.currentUser?.displayName;
+
+  })
+  const dispatch = useDispatch();
+  useEffect(()=> {
+    auth.onAuthStateChanged((authUser)=> {
+      if (authUser){
+        dispatch(setUser(authUser))
+      }
+    })
+  },[dispatch])
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    dispatch(logOutInitiate)
+    location.reload();
+  }
   return (
     <Ul open={open}  >
    
@@ -73,13 +107,14 @@ const RightNav = ({ open }) => {
     <NavLink to='/support'>Support</NavLink>
     </li>
     <li>
-    <NavLink to='/search'>Search</NavLink>
+    <NavLink to='/cart'>Go to Bag</NavLink>
     </li>
     <li>
-    <NavLink to='/signup'>Signup</NavLink>
+    {/* <NavLink to={currentUser ? "/": "/signup"}><button onClick={handleLogout}> {currentUser? "Logout": "SignUp"}</button></NavLink> */}
+    {currentUser ? <button onClick={handleLogout}>Logout</button> : <NavLink to='/signup'>Signup</NavLink>}
     </li>
     <li>
-    <NavLink to='/name'>Name</NavLink>
+    <Text fontWeight={'bold'} fontSize={'16px'} color={'#2997ff'}>{currentUser || ""}</Text>
     </li>
     
     </Ul>

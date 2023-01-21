@@ -10,11 +10,13 @@ import HeroSection from "../Navbar/HeroSection";
 import FooterHome from "../Footer/Footer";
 import Swiper from "swiper";
 import Swiperrr from "./Swiperrr";
+import Navbar from "../Navbar/Navbar";
 
 
 const HomePage = () => {
   return (
     <div>
+      <Navbar/>
       <HeroSection/>
       <div className={style.homepage_main_div}>
         {/* 1st div */}

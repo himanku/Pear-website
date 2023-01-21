@@ -12,10 +12,6 @@ import {GoogleButton} from 'react-google-button'
 import { googleSignInInitiate, loginInitiate } from "../../Redux/Authentication/action";
 
 export const Login = () => {
-  const [admin, setAdmin] = useState({
-    email1: "abhishek1337Chatterjee@gmail.com",
-    password1: '123456',
-  });
   const [values, setValues] = useState({
     email: "",
     password: "",

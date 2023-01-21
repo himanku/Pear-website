@@ -18,9 +18,9 @@ const imageUrls = [
 ];
 
 function createSlide(imageUrls) {
-  return imageUrls.map((url) => {
+  return imageUrls.map((url,index) => {
     return (
-      <SwiperSlide>
+      <SwiperSlide key={index}>
         <img
           className="img"
           src={url}
