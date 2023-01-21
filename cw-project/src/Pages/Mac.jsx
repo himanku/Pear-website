@@ -2,41 +2,20 @@ import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import ProductCard from "../Components/ProductCard";
 import mac from "../assets/macNav.png"
-/*
-  {
-    "screen":"13.6”",
-    "display":"Liquid Retina display9",
-    "chipversion":"Apple M2 chip",
-    "cpu":"8-core",
-    "gpu":"10-core",
-    "selection6":"24GB",
-    "tbsize":"2TB",
-    "selection8":"18 hrs",
-    "selection9":"",
-    "selection10":"Touch ID",
-    "music":"",
-    "weight":"",
-    "camera":"",
-    "name":"",
-    "image":"",
-    "fromPrice":"",
-    "color":""
-    },
-*/
+import { BsPlayCircleFill } from 'react-icons/bs';
+import {Grid} from "@chakra-ui/react"
+
+import data from "../../db.json"
 
 const Mac = () => {
-  const data=[
-    {id:1},
-    {id:2},
-    {id:3},
-    {id:4},
-  ]
+  const data1=data.mac
+  // console.log(data1)
   return (
     <div style={{ textAlign: "center" }}>
       {/* <Navbar/> */}
       Mac
       <div>
-        <img src={mac} alt="mac" style={{width:"75%",margin:"auto"}}/>
+        <img src={mac} alt="mac" style={{width:"70%",margin:"auto"}}/>
       </div>
       <div style={{backgroundColor:"skyblue",marginTop:"0px"}}>
         <h1 style={{fontSize:"12px",padding:" 5px"}}>
@@ -67,10 +46,11 @@ const Mac = () => {
             width: "300px",
             borderRadius: "20px",
             color: "black",
-            padding: "10px",
+            padding: "5px 10px",
+            display:"flex",justifyContent:"center",alignItems:"center",gap:"20px"
           }}
         >
-          Watch the announcement
+          Watch the announcement <BsPlayCircleFill/>
         </button>
       </div>
       {/* =============================================== */}
@@ -249,14 +229,18 @@ const Mac = () => {
         <button>Laptop</button>
         <button>Desktop</button>
       </div>
-      <div>cart section .....
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",width:"70%",margin:"auto"}}>
-          {data.map(el=><ProductCard key={el.id}/>)}
-        </div>
+      <div>
+        <Grid templateColumns={{base:`repeat(1,1fr)`,sm:`repeat(2,1fr)`,md:`repeat(3,1fr)`,lg:`repeat(4,1fr)`}} margin={"auto"} width={"70%"}>
+        
+          {data1.map(el=><ProductCard key={el.id} {...el}/>)}
+        
+        </Grid>
+        {/* <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",width:"70%",margin:"auto"}}>
+          {data1.map(el=><ProductCard key={el.id} {...el}/>)}
+        </div> */}
       </div>
       {/* ================================================================ */}
-      <div
-        style={{
+      <div style={{
           display: "flex",
           //   justifyContent: "center",
           alignItems: "center",
