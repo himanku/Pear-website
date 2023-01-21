@@ -1,5 +1,6 @@
 import React from "react";
 import watch from "../../assets/watch.png";
+import { Grid } from "@chakra-ui/react";
 import unity from "./img/unity.png";
 import ultra from "./img/ultra.png";
 import watch1 from "./img/watch1.png";
@@ -14,15 +15,15 @@ const Watch = () => {
   const data = [
     {
       id: 1,
-      img: "https://www.apple.com/v/watch/bb/images/compare/compare_s8__q5ebcy3sahme_large.jpg",
+      image: "https://www.apple.com/v/watch/bb/images/compare/compare_s8__q5ebcy3sahme_large.jpg",
     },
     {
       id: 2,
-      img: "https://www.apple.com/v/watch/bb/images/compare/compare_se__fjdos6x4rmmy_large.jpg",
+      image: "https://www.apple.com/v/watch/bb/images/compare/compare_se__fjdos6x4rmmy_large.jpg",
     },
     {
       id: 3,
-      img: "https://www.apple.com/v/watch/bb/images/compare/compare_ultra__bzeon0dzb49y_large.jpg",
+      image: "https://www.apple.com/v/watch/bb/images/compare/compare_ultra__bzeon0dzb49y_large.jpg",
     },
   ];
   return (
@@ -126,17 +127,12 @@ const Watch = () => {
       <h1 style={{ fontSize: "40px", fontWeight: "bold" }}>
         Which Apple Watch is right for you?
       </h1>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3,1fr)",
-          gap: "80px"
-        }}
-      >
+   
+        <Grid templateColumns={{base:`repeat(1,1fr)`,sm:`repeat(2,1fr)`,lg:`repeat(3,1fr)`}} margin={"auto"} width={"70%"}>
         {data.map((el) => (
-          <ProductCard key={el.id} img={el.img} />
+          <ProductCard key={el.id} {...el} />
         ))}
-      </div>
+        </Grid>
       <div
         style={{
           display: "flex",
