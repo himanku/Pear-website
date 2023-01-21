@@ -3,7 +3,7 @@ import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, Al
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { deleteTask } from '../../Redux/AdminIpad/action'
+import { deleteTask } from '../../../Redux/AdminMac/action'
 
 const Items = ({ id, image, name, price, review }) => {
     const dispatch = useDispatch();
@@ -103,7 +103,7 @@ const Items = ({ id, image, name, price, review }) => {
                 </AlertDialog>
             </Box>
             {/* <Button colorScheme="red" onClick={handleDelete}>DELETE</Button> */}
-            <Button colorScheme="cyan" onClick={()=>navigate(`/edit/ipad/${id}`)}>EDIT</Button>
+            <Button colorScheme="cyan" onClick={()=>navigate(`/edit/mac/${id}`)}>EDIT</Button>
         </Flex>
       </Box>
     </Box>

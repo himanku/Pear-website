@@ -1,4 +1,7 @@
 import React from "react";
+import Navbar from "../Components/Navbar/Navbar";
+import ProductCard from "../Components/ProductCard";
+import mac from "../assets/macNav.png"
 /*
   {
     "screen":"13.6”",
@@ -22,9 +25,24 @@ import React from "react";
 */
 
 const Mac = () => {
+  const data=[
+    {id:1},
+    {id:2},
+    {id:3},
+    {id:4},
+  ]
   return (
     <div style={{ textAlign: "center" }}>
+      {/* <Navbar/> */}
       Mac
+      <div>
+        <img src={mac} alt="mac" style={{width:"75%",margin:"auto"}}/>
+      </div>
+      <div style={{backgroundColor:"skyblue",marginTop:"0px"}}>
+        <h1 style={{fontSize:"12px",padding:" 5px"}}>
+        Get 3% Daily Cash back with Apple Card. And pay for your new Mac over 12 months, interest‑free when you choose to check out with Apple Card Monthly Installments.*<br/> <span style={{color:"blue"}}>Learn more {">"}</span>
+        </h1>
+      </div>
       <div
         style={{
           display: "flex",
@@ -231,7 +249,11 @@ const Mac = () => {
         <button>Laptop</button>
         <button>Desktop</button>
       </div>
-      <div>cart section .....</div>
+      <div>cart section .....
+        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",width:"70%",margin:"auto"}}>
+          {data.map(el=><ProductCard key={el.id}/>)}
+        </div>
+      </div>
       {/* ================================================================ */}
       <div
         style={{
