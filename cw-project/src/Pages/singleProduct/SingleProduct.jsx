@@ -1,190 +1,150 @@
+import axios from "axios";
 import React from "react";
-import watch from "../../assets/watch.png";
-import { Grid } from "@chakra-ui/react";
-import unity from "./img/unity.png";
-import ultra from "./img/ultra.png";
-import watch1 from "./img/watch1.png";
-import watch2 from "./img/watch2.png";
-import watch3 from "./img/watch3.png";
-import watch4 from "./img/watch4.png";
-import watch5 from "./img/watch5.png";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { CiDeliveryTruck } from 'react-icons/ci';
 
-import ProductCard from "../../Components/ProductCard";
-import Navbar from "../../Components/Navbar/Navbar";
 
-const Watch = () => {
-  const data = [
-    {
-      id: 1,
-      image: "https://www.apple.com/v/watch/bb/images/compare/compare_s8__q5ebcy3sahme_large.jpg",
-    },
-    {
-      id: 2,
-      image: "https://www.apple.com/v/watch/bb/images/compare/compare_se__fjdos6x4rmmy_large.jpg",
-    },
-    {
-      id: 3,
-      image: "https://www.apple.com/v/watch/bb/images/compare/compare_ultra__bzeon0dzb49y_large.jpg",
-    },
-  ];
+const SingleProduct = () => {
+  let id = JSON.parse(localStorage.getItem("singleProduct"));
+  console.log(id);
+  const [data, setData] = useState({});
+  
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/mac/${id}`)
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }, [id]);
+  console.log(data.image);
   return (
     <div
       style={{
-        textAlign: "center",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        textAlign: "center",
       }}
     >
-      Watch
-      {/* <Navbar/> */}
-      <div style={{ backgroundColor: "black", width: "100%" }}>
-        <img src={watch} alt="watch" style={{ width: "80%", margin: "auto" }} />
-      </div>
-      <div style={{ backgroundColor: "red", width: "100%" }}>
-        <h1
-          style={{
-            backgroundColor: "red",
-            color: "white",
-            width: "35%",
-            margin: "auto",
-            padding: "10px",
-            fontSize: "15px",
-          }}
-        >
-          Find gifts to jumpstart their Lunar New Year. Shop the gift guide{" "}
-          {">"}
-        </h1>
-      </div>
-      <div style={{ backgroundColor: "#000000" }}>
-        <img
-          src={unity}
-          alt="unity"
-          style={{ width: "101%", margin: "auto" }}
-        />
-        <h1 style={{ fontSize: "20px", color: "white", fontWeight: "bold" }}>
-          Inspired by the creative process of mosaic, the new Black Unity <br />
-          watch band and matching watch face ◊ symbolize the vibrancy of <br />{" "}
-          Black communities and the power of unity.
-          <br />
-          <br /> Black Unity Sport Loop <br />
-          $49
-        </h1>
-        <div>
-          <button
-            style={{
-              backgroundColor: "rgb(0,113,227)",
-              color: "white",
-              padding: "3px 15px",
-              borderRadius: "15px",
-              fontSize: "18px",
-            }}
-          >
-            Buy
-          </button>
-          <button
-            style={{
-              borderBottom: "1px solid green",
-              borderTop: "1px solid red",
-              borderLeft: "1px solid yellow",
-              borderRadius: "15px",
-              borderRight: "1px solid yellow",
-              color: "white",
-              margin: "20px",
-              padding: " 3px 15px",
-              fontSize: "18px",
-            }}
-          >
-            Find out more
-          </button>
+      SingleProduct
+      <div style={{backgroundColor:"#f5f5f7",width:"100%"}}>
+        <div style={{color:"gray",padding:"15px",margin:"auto"}}>
+        Pay for your new Mac over 12 months at 0% APR with Apple Card.Footnote◊ Just choose Apple Card Monthly Installments when you check out to apply.<br/> <span style={{color:"blue"}}>Learn more {">"}</span>
         </div>
       </div>
-      <div style={{ backgroundColor: "#f5f5f7" }}>
-        <img
-          src={ultra}
-          alt="ultra"
-          style={{ width: "100%", margin: "auto" }}
-        />
-        <img
-          src={watch1}
-          alt="watch1"
-          style={{ width: "100%", margin: "auto" }}
-        />
-      </div>
-      <div style={{ backgroundColor: "black" }}>
-        <img
-          src={watch2}
-          alt="watch2"
-          style={{ width: "100%", margin: "auto" }}
-        />
-      </div>
       <div>
-        <img
-          src={watch3}
-          alt="watch3"
-          style={{ width: "100%", margin: "auto" }}
-        />
-      </div>
-      <h1 style={{ fontSize: "40px", fontWeight: "bold" }}>
-        Which Apple Watch is right for you?
-      </h1>
-   
-        <Grid templateColumns={{base:`repeat(1,1fr)`,sm:`repeat(2,1fr)`,lg:`repeat(3,1fr)`}} margin={"auto"} width={"70%"}>
-        {data.map((el) => (
-          <ProductCard key={el.id} {...el} />
-        ))}
-        </Grid>
-      <div
-        style={{
-          display: "flex",
-          //   justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          width: "95%",
-          color: "white",
-          background: "white",
-          height: "800px",
-          textAlign: "center",
-          marginBottom: "10px",
-          backgroundImage: `url("https://www.apple.com/v/mac/home/bs/images/overview/holiday-2023/cny23_familypage_banner__f2ocdw1w53yq_large.jpg")`,
-          backgroundPosition: "center",
-          backgroundSize: "1500px",
-          backgroundRepeat: "no-repeat",
-          margin: "auto",
-          // border:"1px solid green",
-          zoom: "100%",
-        }}
-      >
-        <img
-          src="https://www.apple.com/v/mac/home/bs/images/overview/holiday-2023/cny23_familypage_banner_bunnylogo__dr5frkhw4g8y_large.png"
-          alt=""
-          style={{ marginTop: "200px" }}
-        />
-
-        <h1
-          style={{
-            fontSize: "45px",
-            fontWeight: "bolder",
-            marginTop: "20px",
-          }}
-        >
-          A gift for every wish.
+        <h1 style={{ fontSize: "45px", fontWeight: "bolder" }}>
+          Choose your new MacBook Pro.
         </h1>
-        <p style={{ fontSize: "20px", fontWeight: "bold", marginTop: "20px" }}>
-          Find something for everyone
+        <p style={{ fontSize: "15px", fontWeight: "normal" }}>
+          Order MacBook Pro 14” and MacBook Pro 16” now. Available starting 1.24
+        </p>
+      </div>
+      <div>
+        {data && <img src={data.image} alt="name" width="350px" />}
+        <img
+          src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/apple-m2-icon-mac-202206?wid=51&hei=51&fmt=png-alpha&.v=1664499199970"
+          alt="chip"
+          style={{ margin: "20px " }}
+        />
+        <h1
+          style={{ fontSize: "25px", fontWeight: "bolder", textAlign: "left" }}
+        >
+          8-Core CPU
           <br />
-          this Lunar New Year.
+          10-Core GPU
+          <br />
+          8GB Unified Memory
+          <br />
+          512GB SSD Storage¹
+        </h1>
+
+        <p
+          style={{ fontSize: "15px", fontWeight: "normal", textAlign: "left" }}
+        >
+          16-core Neural Engine <br />
+          13-inch Retina display with True Tone
+          <br />
+          Two Thunderbolt / USB 4 ports
+          <br />
+          Magic Keyboard
+          <br />
+          Touch Bar and Touch ID
+          <br />
+          Force Touch trackpad
         </p>
-        <p style={{ fontSize: "20px", fontWeight: "bold", marginTop: "20px" }}>
-          Shop the gift guide
+        {data && (
+          <h1
+            style={{ fontSize: "25px", fontWeight: "bold", textAlign: "left" }}
+          >
+            ₹ {data.price}
+          </h1>
+        )}
+        {data && <p>{data.description}</p>}
+        <p style={{ fontSize: "15px", fontWeight: "bold", textAlign: "left" }}>
+          Apple Trade In
+          <br />
+          <span
+            style={{
+              fontSize: "12px",
+              fontWeight: "normal",
+              textAlign: "left",
+            }}
+          >
+            Get credit toward a new Mac when you <br /> trade in your eligible
+            computer. Or recycle <br /> it for free.Footnote◊◊
+          </span>
         </p>
+        <Link>
+          <button
+            style={{
+              backgroundColor: "#0071e3",
+              color: "white",
+              padding: "10px 70px",
+              borderRadius: "10px",
+              margin: "20px auto",
+            }}
+            onClick={()=>{
+                // let newdata=JSON.parse(localStorage.getItem("cart")||[])
+                // newdata.push(data)
+                // localStorage.setItem("cart",JSON.stringify(newdata))
+                axios.post(`http://localhost:8080/cart`,data)
+                .then(res=>console.log(res.data))
+                .catch(err=>console.log(err))
+            }}
+          >
+            Add to Cart
+          </button>
+        </Link>
+        <h1 style={{fontSize:"15px",fontWeight:"bold",textAlign:"center",display:"flex",justifyContent:"left",alignItems:"center"}}><CiDeliveryTruck size={"40px"}/>Delivery:</h1>
+
+        <h1 style={{fontSize:"35px",fontWeight:"bold",margin:"30px"}}>What’s in the Box</h1>
+      </div>
+      <div style={{display:"flex",gap:"20px",margin:"30px auto"}}>
+        <div>
+        <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp13-witb-space-202005?wid=576&hei=392&fmt=p-jpg&qlt=95&.v=1587262414482" alt="mac" />
+        <h1>13-inch MacBook Pro</h1>
+        </div>
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-witb-cable-201911?wid=179&hei=392&fmt=p-jpg&qlt=95&.v=1588707220624" alt="charger" />
+            <h1>USB-C Charge Cable (2 m)</h1>
+        </div>
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-13-witb-adapter-202206?wid=179&hei=392&fmt=p-jpg&qlt=95&.v=1654020202147" alt="ipad" />
+            <h1>67W USB-C Power Adapter</h1>
+        </div>
       </div>
       <div>
-        <img src={watch4} alt="watch4" style={{width:"95%",margin:"auto"}} />
+        <h1 style={{fontSize:"25px",fontWeight:"bolder",margin:"20px auto"}}>What to consider when choosing your MacBook Pro.</h1>
       </div>
       <div>
-        <img src={watch5} alt="watch5"  style={{width:"96%",margin:"auto"}}/>
+        <h1 style={{fontSize:"35px",fontWeight:"bolder",margin:"50px auto"}}>Compare Mac models</h1>
+        <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-compare-202301?wid=903&hei=321&fmt=jpeg&qlt=95&.v=1671167770786" alt=""  style={{margin:"90px auto"}} />
+        <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/applecare-hero-bb-201706?wid=152&hei=152&fmt=jpeg&qlt=95&.v=1629955311000" alt=""  style={{margin:"90px auto"}}/>
+        <h1 style={{fontSize:"30px",fontWeight:"bolder"}}>AppleCare+ for Mac</h1>
+        <p style={{fontSize:"15px",fontWeight:"normal",textAlign:"left",width:"100%",margin:"30px auto"}}>Every Mac comes with a one-year limited warrantyand up to 90 days of complimentary technical support<br/>. AppleCare+ for Mac extends your coverage from your AppleCare+ purchase date and adds unlimited <br/> incidents of accidental damage protection, each subject to a service fee of $99 for screen damage or external enclosure damage, or<br/> $299 for other accidental damage, plus applicable tax. In addition, you’ll get <br/> 24/7 priority access to Apple experts via chat or phone. For complete details, see the terms.</p>
       </div>
       <div>
       <div style={{ backgroundColor: "rgb(245,245,247)" }}>
@@ -364,4 +324,4 @@ const Watch = () => {
   );
 };
 
-export default Watch;
+export default SingleProduct;

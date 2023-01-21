@@ -17,7 +17,9 @@ const ProductCard = ({image,name="Apple Watch Series 8",price="2490",description
             <h1 style={{fontSize:"20px",fontWeight:"bolder"}}>{name}</h1>
             <p style={{marginBottom:"10px"}}>M2 chip, Review:{review}</p>
             <p >From ₹{price}</p>
-            <button style={{backgroundColor:"#0071e3",borderRadius:"10px",padding:"0px 10px",color:"white",margin:"5px"}}>Buy</button>
+            <button style={{backgroundColor:"#0071e3",borderRadius:"10px",padding:"0px 10px",color:"white",margin:"5px"}} onClick={()=>{
+              localStorage.setItem("singleProduct",JSON.stringify(id))
+            }}>Buy</button>
             <p style={{color:"#0071e3",marginTop:"10px"}}>{description}</p>
 
         </div>

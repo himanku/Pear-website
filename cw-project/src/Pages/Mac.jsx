@@ -7,10 +7,21 @@ import { BsPlayCircleFill } from 'react-icons/bs';
 import {Grid} from "@chakra-ui/react"
 
 import data from "../../db.json"
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getMacTasks } from "../Redux/Mac/action";
 
 const Mac = () => {
+  const tasks = useSelector((store) => {
+    // console.log(store.auth.currentUser.displayName);
+    return store.MacReducer.tasks;
+  })
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    getMacTasks(dispatch)
+  },[])
   const data1=data.mac
-  // console.log(data1)
+  console.log(tasks)
   return (
     <div style={{ textAlign: "center" }}>
       Mac
@@ -234,7 +245,7 @@ const Mac = () => {
       <div>
         <Grid templateColumns={{base:`repeat(1,1fr)`,sm:`repeat(2,1fr)`,md:`repeat(3,1fr)`,lg:`repeat(4,1fr)`}} margin={"auto"} width={"70%"}>
         
-          {data1.map(el=><ProductCard key={el.id} {...el}/>)}
+          {tasks&&tasks?.map(el=><ProductCard key={el.id} {...el}/>)}
         
         </Grid>
         {/* <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",width:"70%",margin:"auto"}}>
