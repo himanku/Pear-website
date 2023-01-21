@@ -1,4 +1,3 @@
-import ProductCard from './Components/ProductCard'
 import AllRoutes from './Pages/AllRoutes'
 
 function App() {

@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { InputControl } from "../../Components/InputControl/InputControl";
 import styles from "../Login/login.module.css";
-import {GoogleButton} from 'react-google-button'
+import {GoogleButton} from 'react-google-button';
+import logo from "../../assets/pear_light.png"
 
 import { auth } from "../../firebase";
+import { Image } from "@chakra-ui/react";
 export const Login = () => {
   const [admin, setAdmin] = useState({
     email1: "abhishek1337Chatterjee@gmail.com",
@@ -42,13 +44,14 @@ export const Login = () => {
   return (
     <div>
       <div className={styles.container}>
-      <video  autoPlay muted className={styles.videoPlay} loop>
+      <video autoPlay muted className={styles.videoPlay} loop>
           <source src="https://www.apple.com/105/media/us/ipad-10.9/2022/4c5d6d90-d0de-429a-84f7-cf8827181a11/anim/features/large_2x.mp4"
           type="video/mp4"
           />
         </video>
         <div className={styles.innerBox}>
-          <h1 className={styles.heading}>Sign in to Pear Store</h1>
+          <Image src={logo} w="100px" margin="auto"/>
+          <h1 className={styles.heading}>Log in to Pear Store</h1>
           <InputControl
             label="Email"
             type="email"
@@ -73,7 +76,7 @@ export const Login = () => {
             </button>
             <GoogleButton className={styles.google}/>
             <p>
-              Not have an account ?{" "}
+              Don't have an account ?{" "}
               <span>
                 <Link to="/signup">Sign Up</Link>
               </span>

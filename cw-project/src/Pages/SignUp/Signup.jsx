@@ -4,9 +4,10 @@ import { InputControl } from "../../Components/InputControl/InputControl";
 import { useNavigate} from 'react-router-dom'
 import styles from "../SignUp/Signup.module.css";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import {GoogleButton} from 'react-google-button'
-
+import {GoogleButton} from 'react-google-button';
+import logo from "../../assets/pear_light.png"
 import {auth} from '../../firebase'
+import { Image } from "@chakra-ui/react";
 
 export const Signup = () => {
   const [values, setValues] = useState({
@@ -48,6 +49,7 @@ export const Signup = () => {
           />
         </video>
         <div className={styles.innerBox}>
+          <Image src={logo} w="100px" margin="auto"/>
           <h1 className={styles.heading}>Sign Up to Pear Store</h1>
           <InputControl
             label="Name"

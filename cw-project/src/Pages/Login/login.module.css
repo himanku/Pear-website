@@ -18,13 +18,14 @@
   min-width: 480px;
   height: fit-content;
   width: fit-content;
-  background-color: #fff;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   padding: 30px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  backdrop-filter: blur(15px);
+  background: center center / cover rgba(244, 247, 254, 0.2);
 }
 .container .videoPlay {
   position: relative;
@@ -67,6 +68,7 @@
   font-family: sf-pro;
   font-weight: 700;
   color: #000;
+  margin: auto;
 }
 
 .footer p span {
@@ -80,8 +82,8 @@
 
 .heading {
   font-size: larger;
-  color: rgb(65, 64, 64);
-  padding-bottom: 10px;
+  color: rgb(0, 0, 0);
+  padding-bottom: 0px;
   text-align: center;
   font-family: sf-pro;
 }
