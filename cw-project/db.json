@@ -31,6 +31,14 @@
       "price": 78000,
       "description": "The all‑new colorful iPad for the things you do every day.",
       "review": 51
+    },
+    {
+      "name": "New",
+      "image": "https://icon-library.com/images/users-icon/users-icon-10.jpg",
+      "price": "0",
+      "description": "Launched",
+      "review": 0,
+      "id": 5
     }
   ],
   "mac": [

@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { InputControl } from "../../Components/InputControl/InputControl";
 import { useNavigate } from "react-router-dom";
 import styles from "../SignUp/Signup.module.css";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import logo from "../../assets/pear_light.png"
+import {auth} from '../../firebase'
+import { Image } from "@chakra-ui/react";
 import { GoogleButton } from "react-google-button";
-
 import { useDispatch, useSelector } from "react-redux";
 import { registerInitiate } from "../../Redux/Authentication/action";
 
@@ -59,6 +62,7 @@ const dispatch = useDispatch();
           />
         </video>
         <div className={styles.innerBox}>
+          <Image src={logo} w="100px" margin="auto"/>
           <h1 className={styles.heading}>Sign Up to Pear Store</h1>
           <InputControl
             label="Name"

@@ -12,7 +12,7 @@ const initState = {
     review: "",
   };
 
-const ProductFlexCardIpad = () => {
+const UserTotal = () => {
     const tasks = useSelector((store) =>store.AdminReducerIpad.tasks);
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [add, setAdd] = useState(initState);
@@ -58,16 +58,16 @@ const ProductFlexCardIpad = () => {
     <div>
 
         <Flex alignItems="center" justifyContent="space-between" gap="10px">
-            <Flex w={{base:"200px", sm:"300px"}} justifyContent="space-around" borderRadius="10px" p="10px" boxShadow= "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px">
-                <Box borderRadius="50%" w={{base:"30%", sm:"20%"}} overflow={"hidden"} >
-                    <Image src="https://www.pngitem.com/pimgs/m/509-5099434_todo-app-logo-transparent-hd-png-download.png" alt=""/>
+            <Flex bgColor="white" w={{base:"200px", sm:"300px"}} justifyContent="space-around" borderRadius="10px" p="10px" boxShadow= "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px">
+                <Box w={{base:"25%", sm:"18%"}} overflow={"hidden"} >
+                    <Image src="https://icon-library.com/images/users-icon/users-icon-10.jpg" alt="users"/>
                 </Box>
                 <Box>
-                    <Text fontSize={{base:"13px", sm:"20px"}} fontWeight="bold" color="gray.600">TOTAL iPADs</Text>
+                    <Text fontSize={{base:"13px", sm:"20px"}} fontWeight="bold" color="gray.600">TOTAL USERS</Text>
                     <Text fontSize={{base:"13px", sm:"20px"}}>{tasks.length}</Text>
                 </Box>
             </Flex>
-            <Button variant="outline" colorScheme="cyan" size="sm" onClick={onOpen}>ADD iPAD</Button>
+            <Button variant="outline" colorScheme="cyan" size="sm" onClick={onOpen}>ADD USER</Button>
             <Modal
             initialFocusRef={initialRef}
             isOpen={isOpen}
@@ -88,11 +88,11 @@ const ProductFlexCardIpad = () => {
 
             <ModalBody pb={6}>
                 <FormControl>
-                <FormLabel>MODEL NAME</FormLabel>
+                <FormLabel>ENTER NAME</FormLabel>
                 <Input
                     ref={initialRef}
-                    placeholder="Enter Model Name"
-                    type="name"
+                    placeholder="Enter Name"
+                    type="text"
                     name="name"
                     onChange={handleChange}
                     value={add.name}
@@ -100,10 +100,10 @@ const ProductFlexCardIpad = () => {
                 </FormControl>
 
                 <FormControl mt={4}>
-                <FormLabel>ENTER PRICE</FormLabel>
+                <FormLabel>ENTER EMAIL</FormLabel>
                 <Input
-                    placeholder="Enter Price"
-                    type="number"
+                    placeholder="Enter Email"
+                    type="email"
                     name="price"
                     onChange={handleChange}
                     value={add.price}
@@ -111,24 +111,13 @@ const ProductFlexCardIpad = () => {
                 </FormControl>
 
                 <FormControl mt={4}>
-                <FormLabel>ENTER IMG URL</FormLabel>
+                <FormLabel>SET PASSWORD</FormLabel>
                 <Input
-                    placeholder="Enter Image URL"
-                    type="text"
+                    placeholder="Set Password"
+                    type="password"
                     name="image"
                     onChange={handleChange}
                     value={add.image}
-                />
-                </FormControl>
-
-                <FormControl mt={4}>
-                <FormLabel>ENTER DESCRIPTION</FormLabel>
-                <Textarea
-                    placeholder="Enter Description"
-                    type="text"
-                    name="description"
-                    onChange={handleChange}
-                    value={add.description}
                 />
                 </FormControl>
             </ModalBody>
@@ -142,7 +131,7 @@ const ProductFlexCardIpad = () => {
                 mr={3}
                 onClick={handleSubmit}
                 >
-                Save
+                ADD
                 </Button>
                 <Button colorScheme={"red"} onClick={onClose}>Cancel</Button>
             </ModalFooter>
@@ -154,4 +143,4 @@ const ProductFlexCardIpad = () => {
   )
 }
 
-export default ProductFlexCardIpad
+export default UserTotal

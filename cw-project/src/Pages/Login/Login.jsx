@@ -6,6 +6,8 @@ import { auth } from "../../firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { InputControl } from "../../Components/InputControl/InputControl";
 import styles from "../Login/login.module.css";
+import logo from "../../assets/pear_light.png"
+import { Image } from "@chakra-ui/react";
 import {GoogleButton} from 'react-google-button'
 import { googleSignInInitiate, loginInitiate } from "../../Redux/Authentication/action";
 
@@ -66,13 +68,14 @@ const dispatch = useDispatch();
   return (
     <div>
       <div className={styles.container}>
-      <video  autoPlay muted className={styles.videoPlay} loop>
+      <video autoPlay muted className={styles.videoPlay} loop>
           <source src="https://www.apple.com/105/media/us/ipad-10.9/2022/4c5d6d90-d0de-429a-84f7-cf8827181a11/anim/features/large_2x.mp4"
           type="video/mp4"
           />
         </video>
         <div className={styles.innerBox}>
-          <h1 className={styles.heading}>Sign in to Pear Store</h1>
+          <Image src={logo} w="100px" margin="auto"/>
+          <h1 className={styles.heading}>Log in to Pear Store</h1>
           <InputControl
             label="Email"
             type="email"
@@ -97,7 +100,7 @@ const dispatch = useDispatch();
             </button>
             <GoogleButton onClick={handleGoogleSignIn}/>
             <p>
-              Not have an account ?{" "}
+              Don't have an account ?{" "}
               <span>
                 <Link to="/signup">Sign Up</Link>
               </span>
