@@ -1,40 +1,24 @@
 import React from "react";
 
-const ProductCard = ({img="https://www.apple.com/v/mac/home/bs/images/overview/compare/compare_mbp14_and_16__f2dhysusb5im_large.png"}) => {
-//   const dummy = {
-//     screen: "13.6”",
-//     display: "Liquid Retina display9",
-//     chipversion: "Apple M2 chip",
-//     cpu: "8-core",
-//     gpu: "10-core",
-//     selection6: "24GB",
-//     tbsize: "2TB",
-//     battery: "18 hrs",
-//     selection9: "",
-//     selection10: "Touch ID",
-//     music:
-//       "Studio-quality three‑mic array Six-speaker sound system with Spatial Audio",
-//     weight: "3.5 lb. or 4.7 lb.",
-//     camera: "1080p FaceTime HD camera",
-//     memory: "Up to 16GB unified memory",
-//   };
+const ProductCard = ({image,name="Apple Watch Series 8",price="2490",description="Learn more >",id="0",review="25"}) => {
+
   return (
     <div>
       <div  style={{ display: "flex", flexDirection: "column", gap: "10px",justifyContent:"center",alignItems:"center",textAlign:"center" }}>
         <div>
-            <img src={img} alt=""  
-            style={{margin:"auto"}}
+            <img src={image} alt="name"  
+            style={{margin:"auto",height:"200px"}}
             
             />
             <img src="https://www.apple.com/v/mac/home/bs/images/overview/compare/compare_swatches_three_colors__bagzlsvl2ehu_large.png" alt="" 
             style={{margin:"auto",marginTop:"20px",marginBottom:"10px"}}
             
             />
-            <h1 style={{fontSize:"20px",fontWeight:"bolder"}}>MacBook Pro 13”</h1>
-            <p style={{marginBottom:"10px"}}>M2 chip</p>
-            <p >From $1299</p>
+            <h1 style={{fontSize:"20px",fontWeight:"bolder"}}>{name}</h1>
+            <p style={{marginBottom:"10px"}}>M2 chip, Review:{review}</p>
+            <p >From ₹{price}</p>
             <button style={{backgroundColor:"#0071e3",borderRadius:"10px",padding:"0px 10px",color:"white",margin:"5px"}}>Buy</button>
-            <p style={{color:"#0071e3",marginTop:"10px"}}>Learn more{ ">"}</p>
+            <p style={{color:"#0071e3",marginTop:"10px"}}>{description}</p>
 
         </div>
         <hr style={{border:"1px solid gray",width:"250px"}} />

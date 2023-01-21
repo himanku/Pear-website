@@ -1,0 +1,17 @@
+.component{
+    /* border: 1px solid red; */
+    text-align: center;
+    height: 80px;
+    width: 50%;
+    
+
+}
+
+.component img{
+    padding-left: 25px;
+    width: 70%;
+    height: 50px;
+}
+.component p{
+    font-size: 13px;
+}
