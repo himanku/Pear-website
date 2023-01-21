@@ -5,18 +5,19 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 
-import {getAuth} from 'firebase/auth'
+import { getAuth } from "firebase/auth";
+import {GoogleAuthProvider} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: " AIzaSyB1dsXckD18v2c78msxxXSgpBi4yNRycUw",
   authDomain: "apple-clone-bd169.firebaseapp.com",
   projectId: "apple-clone-bd169",
-  storageBucket: "apple-clone-bd169.firebaseapp.com",
+  storageBucket: "apple-clone-bd169.appspot.com",
   messagingSenderId: "927988920962",
-  appId: "1:927988920962:web:2602ed955ba516ec747a9b"
+  appId: "1:927988920962:web:2602ed955ba516ec747a9b",
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-
 export const auth = getAuth();
+export const googleAuthProvider = new GoogleAuthProvider();

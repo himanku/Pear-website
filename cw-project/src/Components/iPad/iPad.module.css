@@ -1,16 +1,154 @@
 .ipad_love{
-    border: 5px solid red;
+    width: 60%;
+    /* border: 5px solid red; */
     display: flex;
+    margin: auto;
+    padding-bottom: 20px;
 }
 .text{
-    border: 0.5px solid rgb(60, 12, 12);
+    /* border: 0.5px solid rgb(60, 12, 12); */
     text-align: center;
     margin:auto;
     align-items: center;
-    
-    
-   
+     margin-left: -100px;
+
 }
-.text h3{
-    font-weight: bold;
+.image{
+    display: flex;
+    flex-direction: left;
+    /* border: 5px solid rgb(60, 12, 12); */
+}
+
+.top_1{
+    width: 60%;
+    display: flex;
+    /* border:2px solid green; */
+    gap: 10px;
+   padding: 10px;
+     margin: auto;
+     padding-left: 80px;
+}
+.top_1 p{
+    text-align: center;
+    font-size: 13px;
+}
+.top_1 img{
+    width: 60%;
+    height: 80px;
+     margin: auto;
+     
+}
+.addition {
+    background-color: rgb(206, 17, 17);
+    padding: 8px;
+    color: white;
+    text-align: center;
+}
+.text h1{
+    font-weight: 500px;;
+    font-size: 80px;
+   
+    
+}
+.text h4{
+    
+    font-weight: 500px;
+    font-size: 30px;
+    
+    
+}
+.ipad_pro {
+    width: 100%;
+    /* border: 5px solid red; */
+    background-color: black;
+    height: 700px;
+    
+}
+.iPad_pro img{
+    width: 100%;
+    
+    /* border: 2px solid red; */
+    
+    
+}
+.text1{
+    text-align: center;
+    margin:auto;
+    align-items: center;
+    width: 30%;
+    text-align: center;
+    /* border:2px solid green; */
+    
+}
+.ipad_pro .text1 h1{
+    font-size: 70px;
+    color: aliceblue;
+    font-weight: 600px;
+}
+.ipad_pro .text1 h4{
+    font-size: 20px;
+    color: aliceblue;
+    font-weight: 40px;
+}
+.pear{
+    text-align: center;
+    margin: auto;
+    
+    height: 600px;
+    width: 90%;
+}
+.pear h1{
+    font-size: 80px;
+    color: aliceblue;
+}
+.pear h4{
+    font-size: 30px;
+    color: aliceblue;
+   }
+   .fifth{
+    display: flex;
+    padding-top: 50px;
+   
+    width: 90%;
+    gap:30px;
+    margin:auto;
+    text-align: center;
+
+   }
+   .fifth .left{
+    
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5pt;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+   }
+   .fifth .right{
+    
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+   }
+   .left h1{font-size:40px;font-weight: 700;}
+   .left p{font-size:20px ;font-weight: 500;}
+
+   .right h1{font-size:40px;font-weight: 700;}
+   .right p{font-size:20px ;font-weight: 500;}
+.accessories{
+    /* border: 1px solid goldenrod; */
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    margin-top: 50px;
+
+}
+.head h1{
+    font-size: 50px;
+    font-weight: 600;
+}
+.head p{
+    font-size: 20px;
+    font-weight: 200;
+
 }

@@ -6,15 +6,14 @@ import logo from "../../assets/pear_light.png"
 import { Link } from 'react-router-dom';
 
 const LinkItems = [
-    { name: 'Home', icon: FiHome, route: 'dashboard' },
+    { name: 'Dashboard', icon: FiHome, route: 'dashboard' },
     { name: 'All Products', icon: FiTrendingUp, route: 'products' },
     { name: 'Users', icon: FiUsers, route: 'users' },
     { name: 'Orders', icon: FiPackage, route: 'orders' },
-    { name: 'Logout', icon: FiLogOut, route: 'dashboard' },
+    { name: 'Logout', icon: FiLogOut, route: 'home' },
   ];
 
 const SidebarContent = ({onClose, ...rest}) => {
-    //const { onClose } = useDisclosure();
   return (
     <Box
       transition="1s ease"
@@ -26,7 +25,7 @@ const SidebarContent = ({onClose, ...rest}) => {
       h="full"
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Link to="/dashboard"><Image src={logo} w={{base:"30%", sm:"20%", md: "70%" }}/></Link>
+        <Link to="/dashboard"><Image src={logo} w={{base:"50%", md: "70%" }}/></Link>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
