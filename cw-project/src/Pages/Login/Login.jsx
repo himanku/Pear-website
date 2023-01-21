@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { InputControl } from "../../Components/InputControl/InputControl";
 import styles from "../Login/login.module.css";
 import {GoogleButton} from 'react-google-button'
-import { loginInitiate } from "../../Redux/Authentication/action";
+import { googleSignInInitiate, loginInitiate } from "../../Redux/Authentication/action";
 
 export const Login = () => {
   const [admin, setAdmin] = useState({
@@ -19,11 +19,16 @@ export const Login = () => {
     password: "",
   });
  
+  //error.code
 
   const btnDisable = useSelector((store) => {
     // console.log(store.auth.btnDisabled);
     return store.auth.btnDisabled
   })
+
+  const handleGoogleSignIn = () => {
+    dispatch(googleSignInInitiate());
+  }
 
   const Error = useSelector((store) => {
     // console.log(store.auth.error);
@@ -48,11 +53,11 @@ const dispatch = useDispatch();
           alert(`Sign In Successfully as admin ${res.user.displayName}`);
           navigate("/dashboard");
           setError("");
-        }else{
+          return ;
+        }
           alert(`Sign In Successfully as ${res.user.displayName}`);
           navigate("/");
           setError("");
-        }
       })
       .catch((err) => {
         setError(err.message);
@@ -90,7 +95,7 @@ const dispatch = useDispatch();
             <button disabled={btnDisable} onClick={handleSubmit}>
               Login
             </button>
-            <GoogleButton className={styles.google}/>
+            <GoogleButton onClick={handleGoogleSignIn}/>
             <p>
               Not have an account ?{" "}
               <span>

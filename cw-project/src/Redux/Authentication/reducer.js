@@ -1,4 +1,7 @@
 import {
+  GOOGLE_SIGN_IN_ERROR,
+  GOOGLE_SIGN_IN_START,
+  GOOGLE_SIGN_IN_SUCCESS,
   LOGIN_ERROR,
   LOGIN_START,
   LOGIN_SUCCESS,
@@ -8,6 +11,7 @@ import {
   REGISTER_ERROR,
   REGISTER_START,
   REGISTER_SUCCESS,
+  SET_USER,
 } from "./actionTypes";
 
 const initialState = {
@@ -22,9 +26,13 @@ export const reducer = (state = initialState, action) => {
     case REGISTER_START:
     case LOGIN_START:
     case LOGOUT_START:
+      case GOOGLE_SIGN_IN_START:
       return { ...state, loading: true, btnDisabled: true };
+      case SET_USER:
+        return {...state, loading:false, currentUser: action.payload};
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
+      case GOOGLE_SIGN_IN_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -36,6 +44,7 @@ export const reducer = (state = initialState, action) => {
     case REGISTER_ERROR:
     case LOGIN_ERROR:
     case LOGOUT_ERROR:
+      case GOOGLE_SIGN_IN_ERROR:
       return {
         ...state,
         loading: false,
