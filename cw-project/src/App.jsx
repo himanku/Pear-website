@@ -1,4 +1,3 @@
-import ProductCard from './Components/ProductCard'
 import AllRoutes from './Pages/AllRoutes'
 import Mac from "./Pages/Mac"
 import Watch from "./Pages/Watch/Watch"
@@ -7,10 +6,7 @@ function App() {
     <div>
       <AllRoutes/>
 
-      {/* <Mac/> */}
-      <Watch/>
-    </div>
-
+      </div>
   )
 }
 

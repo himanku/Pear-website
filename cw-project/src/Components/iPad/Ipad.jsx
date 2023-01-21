@@ -1,7 +1,7 @@
 import { background, color, Flex, Heading } from "@chakra-ui/react";
 import React from "react";
 import style from "./iPad.module.css";
-import logo from "../.././assets/pear_light.png";
+import logo from "../.././assets/pear_logo.png";
 
 const Ipad = () => {
   return (
