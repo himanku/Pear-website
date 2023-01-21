@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+  margin-top: 10px;
+  
 }
 
 .single_img_data {
@@ -42,3 +44,17 @@
         max-width: 100%;
     }
  } */
+
+
+ @media only screen and (max-width: 768px) {
+  .homepage_main_div {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .homepage_main_div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

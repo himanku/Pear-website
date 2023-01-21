@@ -254,10 +254,6 @@ const HomePage = () => {
           />
         </div>
       </div>
-
-      <div className={style.slider_container}>
-
-      </div>
     </div>
   );
 };

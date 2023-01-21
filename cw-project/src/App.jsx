@@ -1,12 +1,11 @@
-import AllRoutes from './Pages/AllRoutes'
-import Mac from "./Pages/Mac"
-import Watch from "./Pages/Watch/Watch"
+import AllRoutes from "./Pages/AllRoutes";
+
 function App() {
- return (
+  return (
     <div>
       <AllRoutes/>
-      </div>
+     </div>
   )
 }
 
-export default App
+export default App;
