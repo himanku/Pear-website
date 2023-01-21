@@ -24,7 +24,7 @@ const AllRoutes = () => {
   },[dispatch])
   return (
     <Routes>
-      <Route path='/dashboard' element={<Home/>}></Route>
+      <Route path='/dashboard' element={<PrivateRoute><Home/></PrivateRoute>}></Route>
       <Route path='/' element={<PrivateRoute><Home1/></PrivateRoute>}></Route>
       <Route path='/products' element={<Products/>}></Route>
       <Route path='/users' element={<Users/>}></Route>

@@ -24,6 +24,7 @@ export const Home1 = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
     dispatch(logOutInitiate)
+    location.reload();
   }
   
   return (

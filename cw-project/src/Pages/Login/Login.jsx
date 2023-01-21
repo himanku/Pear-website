@@ -51,7 +51,7 @@ const dispatch = useDispatch();
    dispatch(loginInitiate(values.email, values.password));
    signInWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {
-        if(values.email === 'abhishek1337chatterjee@gmail.com'){
+        if(values.email === 'abhishek1337chatterjee@gmail.com' || values.email === 'himanku@gmail.com'){
           alert(`Sign In Successfully as admin ${res.user.displayName}`);
           navigate("/dashboard");
           setError("");
