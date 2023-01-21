@@ -10,6 +10,7 @@ import { PrivateRoute } from '../Components/Auth/PrivateRoute'
 import { useDispatch } from 'react-redux'
 import {auth} from '../firebase'
 import { setUser } from '../Redux/Authentication/action'
+import HomePage from '../Components/HomePage/HomePage'
 
 const AllRoutes = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const AllRoutes = () => {
   return (
     <Routes>
       <Route path='/dashboard' element={<PrivateRoute><Home/></PrivateRoute>}></Route>
-      <Route path='/' element={<PrivateRoute><Home1/></PrivateRoute>}></Route>
+      <Route path='/' element={<HomePage/>}></Route>
       <Route path='/products' element={<Products/>}></Route>
       <Route path='/users' element={<Users/>}></Route>
       <Route path='/login' element={<Login/>}></Route>

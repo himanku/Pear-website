@@ -53,3 +53,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+ .active{
+  color: red;
+  font-weight: 500;
+ }
+ body{
+  margin: 0;
+  padding: 0;
+ }
+
+
+

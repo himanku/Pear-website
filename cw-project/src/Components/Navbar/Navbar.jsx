@@ -4,24 +4,26 @@ import Burger from './Burger';
 import logo from "../../assets/pear-dark.png";
 
 const Nav = styled.nav`
-  width: 100%
+  width: 100%;
   height: 55px;
   color: white;
   padding: 0 ;
   display: flex;
+  // margin:auto;
   position: fixed;
+  z-index:2;
   top: 0px;
-
-  justify-content: space-between;
+  background-color:black;
+  justify-content: space-around;
 
   .logo {
     padding: 8px 0;
-    margin-left: 110px;
+    // margin-left: 110px;
     background-color:black;
   }
   .logoImg{
-    height: 30px;
-    width: 40px;
+  
+    width: 80px;
     // margin-left:150px;
     margin-right:20px;
     mrgin-bottom:150px;

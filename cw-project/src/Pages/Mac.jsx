@@ -14,7 +14,7 @@ const Mac = () => {
   return (
     <div style={{ textAlign: "center" }}>
       Mac
-
+     {/* <Navbar/> */}
       <div>
         <img src={mac} alt="mac" style={{width:"70%",margin:"auto"}}/>
       </div>

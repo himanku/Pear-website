@@ -78,6 +78,9 @@ const RightNav = ({ open }) => {
     <li>
     <NavLink to='/signup'>Signup</NavLink>
     </li>
+    <li>
+    <NavLink to='/name'>Name</NavLink>
+    </li>
     
     </Ul>
   )

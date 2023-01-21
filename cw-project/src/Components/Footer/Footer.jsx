@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
-const Footer = () => {
+const FooterHome = () => {
   return (
     <div style={{ backgroundColor: "#f8fcfd" }}>
       <div
@@ -117,4 +117,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterHome;

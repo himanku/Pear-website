@@ -6,10 +6,16 @@ import applewatch from "../../assets/apple-watch.jpg";
 import iphone14 from "../../assets/iphone-14.jpg";
 import applecard from "../../assets/apple-card.jpg";
 import applegiftcard from "../../assets/apple-gift-card.jpg";
+import HeroSection from "../Navbar/HeroSection";
+import FooterHome from "../Footer/Footer";
+import Swiper from "swiper";
+import Swiperrr from "./Swiperrr";
+
 
 const HomePage = () => {
   return (
     <div>
+      <HeroSection/>
       <div className={style.homepage_main_div}>
         {/* 1st div */}
         <div className={style.single_img_data}>
@@ -254,6 +260,8 @@ const HomePage = () => {
           />
         </div>
       </div>
+      <Swiperrr/>
+      <FooterHome/>
     </div>
   );
 };
