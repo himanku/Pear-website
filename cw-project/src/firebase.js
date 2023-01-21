@@ -12,7 +12,7 @@ const firebaseConfig = {
   apiKey: " AIzaSyB1dsXckD18v2c78msxxXSgpBi4yNRycUw",
   authDomain: "apple-clone-bd169.firebaseapp.com",
   projectId: "apple-clone-bd169",
-  storageBucket: "apple-clone-bd169.firebaseapp.com",
+  storageBucket: "apple-clone-bd169.appspot.com",
   messagingSenderId: "927988920962",
   appId: "1:927988920962:web:2602ed955ba516ec747a9b",
 };

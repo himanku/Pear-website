@@ -1,12 +1,12 @@
-import { Box, Drawer, DrawerContent, Flex, Text, useColorModeValue, useDisclosure, Image } from '@chakra-ui/react'
+import { Box, Drawer, DrawerContent, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
-// import EChart from '../../Components/Admin/Charts/Echart';
-// import LineChart from '../../Components/Admin/Charts/LineChart';
 import { MobileNav } from '../../Components/Admin/MobileNav';
 import RevenueCard from '../../Components/Admin/RevenueCard';
 import SidebarContent from '../../Components/Admin/SidebarContent'
+
 import bar from "../../assets/bar.png"
 import exp from "../../assets/exp.png"
+
 
 const Home = () => {
     const { onClose, isOpen, onOpen } = useDisclosure();
@@ -34,9 +34,8 @@ const Home = () => {
           <Image src={bar} w={{base:"90%",md:"50%"}}/>
           <Image src={exp} w={{base:"90%",md:"50%"}}/>
         </Flex>
+
       </Box>
-     
-      
     </Box>
   )
 }

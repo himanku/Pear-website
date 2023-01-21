@@ -21,9 +21,23 @@ export const MobileNav = ({  onOpen, ...rest }) => {
           aria-label="open menu"
           icon={<FiMenu />}
         />
+  
+        {/* <Text
+          display={{ base: 'flex', md: 'none' }}
+          fontSize="2xl"
+          fontFamily="monospace"
+          fontWeight="bold">
+          Logo
+        </Text> */}
         <Image src={logo} w={{base: "28%", sm:"17%"}} display={{ base: 'flex', md: 'none' }}/>
   
         <HStack spacing={{ base: '0', md: '6' }}>
+          {/* <IconButton
+            size="lg"
+            variant="ghost"
+            aria-label="open menu"
+            icon={<FiBell />}
+          /> */}
           <Flex alignItems={'center'}>
             <Menu>
               <MenuButton

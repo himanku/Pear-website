@@ -10,7 +10,7 @@ const LinkItems = [
     { name: 'All Products', icon: FiTrendingUp, route: 'products' },
     { name: 'Users', icon: FiUsers, route: 'users' },
     { name: 'Orders', icon: FiPackage, route: 'orders' },
-    { name: 'Logout', icon: FiLogOut, route: 'home' },
+    { name: 'Logout', icon: FiLogOut, route: 'dashboard' },
   ];
 
 const SidebarContent = ({onClose, ...rest}) => {

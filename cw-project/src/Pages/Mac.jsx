@@ -1,4 +1,5 @@
 import React from "react";
+
 import Navbar from "../Components/Navbar/Navbar";
 import ProductCard from "../Components/ProductCard";
 import mac from "../assets/macNav.png"
@@ -12,8 +13,8 @@ const Mac = () => {
   // console.log(data1)
   return (
     <div style={{ textAlign: "center" }}>
-      {/* <Navbar/> */}
       Mac
+
       <div>
         <img src={mac} alt="mac" style={{width:"70%",margin:"auto"}}/>
       </div>
@@ -229,6 +230,7 @@ const Mac = () => {
         <button>Laptop</button>
         <button>Desktop</button>
       </div>
+
       <div>
         <Grid templateColumns={{base:`repeat(1,1fr)`,sm:`repeat(2,1fr)`,md:`repeat(3,1fr)`,lg:`repeat(4,1fr)`}} margin={"auto"} width={"70%"}>
         

@@ -94,7 +94,6 @@ const dispatch = useDispatch();
             <button disabled={btnDisable} onClick={handleSubmit}>
               Sign Up
             </button>
-            <GoogleButton />
             <p>
               Already have an account ?{" "}
               <span>

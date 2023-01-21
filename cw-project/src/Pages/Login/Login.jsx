@@ -9,27 +9,28 @@ import styles from "../Login/login.module.css";
 import logo from "../../assets/pear_light.png"
 import { Image } from "@chakra-ui/react";
 import {GoogleButton} from 'react-google-button'
-import { loginInitiate } from "../../Redux/Authentication/action";
+import { googleSignInInitiate, loginInitiate } from "../../Redux/Authentication/action";
 
 export const Login = () => {
   const [admin, setAdmin] = useState({
     email1: "abhishek1337Chatterjee@gmail.com",
-    password1: 123456,
+    password1: '123456',
   });
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
-  const currentUser = useSelector((store) => {
-    // console.log(store.auth.currentUser);
-    return store.auth.currentUser;
-  })
-
+ 
+  //error.code
 
   const btnDisable = useSelector((store) => {
     // console.log(store.auth.btnDisabled);
     return store.auth.btnDisabled
   })
+
+  const handleGoogleSignIn = () => {
+    dispatch(googleSignInInitiate());
+  }
 
   const Error = useSelector((store) => {
     // console.log(store.auth.error);
@@ -50,8 +51,15 @@ const dispatch = useDispatch();
    dispatch(loginInitiate(values.email, values.password));
    signInWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {
-        alert('Sign In Successfully');
-         navigate("/");
+        if(values.email === 'abhishek1337chatterjee@gmail.com'){
+          alert(`Sign In Successfully as admin ${res.user.displayName}`);
+          navigate("/dashboard");
+          setError("");
+          return ;
+        }
+          alert(`Sign In Successfully as ${res.user.displayName}`);
+          navigate("/");
+          setError("");
       })
       .catch((err) => {
         setError(err.message);
@@ -86,11 +94,11 @@ const dispatch = useDispatch();
           />
 
           <div className={styles.footer}>
-            <b className={styles.error}>{error===''? Error : error}</b>
+            <b className={styles.error}>{ error}</b>
             <button disabled={btnDisable} onClick={handleSubmit}>
               Login
             </button>
-            <GoogleButton className={styles.google}/>
+            <GoogleButton onClick={handleGoogleSignIn}/>
             <p>
               Don't have an account ?{" "}
               <span>
