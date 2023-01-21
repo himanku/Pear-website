@@ -5,6 +5,7 @@ import { reducer as AdminReducerMac} from "../Redux/AdminMac/reducer";
 import { reducer as AuthReducer} from '../Redux/Authentication/reducer';
 import {reducer as MacReducer } from "../Redux/Mac/reducer"
 
+
 const rootReducer = combineReducers({
     AdminReducerIpad, 
     AdminReducerMac,

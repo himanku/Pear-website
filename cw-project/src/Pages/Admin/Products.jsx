@@ -2,6 +2,7 @@ import { Box, Drawer, DrawerContent, useColorModeValue, useDisclosure } from '@c
 import React from 'react'
 import { MobileNav } from '../../Components/Admin/MobileNav';
 import ProductTabs from '../../Components/Admin/ProductTabs';
+import RevenueCard from '../../Components/Admin/RevenueCard';
 import SidebarContent from '../../Components/Admin/SidebarContent'
 
 const Products = () => {

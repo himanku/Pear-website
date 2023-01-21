@@ -28,6 +28,8 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    backdrop-filter: blur(15px);
+    background: center center / cover rgba(244, 247, 254, 0.2);
 }
 .footer{
     display: flex;
@@ -51,8 +53,6 @@
 }
 .footer button:hover{
     background-color: aqua;
-    
-    
 }
 
 .footer .error{
@@ -66,7 +66,7 @@
     font-family: sf-pro;
     font-weight: 700;
     color: #000;
-
+    margin: auto;
 }
 
 .footer p span {
@@ -80,8 +80,8 @@
 
 .heading {
     font-size: larger;
-    color: rgb(65, 64, 64);
-    padding-bottom: 10px;
+    color: rgb(10, 10, 10);
+    padding-bottom: 0px;
     text-align: center;
     font-family: sf-pro;
 }

@@ -2,7 +2,34 @@ import { Box, Avatar, Flex, HStack, IconButton, Menu, MenuButton, MenuDivider, M
 import { FiChevronDown, FiMenu } from "react-icons/fi";
 import logo from "../../assets/pear_light.png"
 
+import React, {useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import { useNavigate } from 'react-router-dom';
+import { logOutInitiate } from '../../Redux/Authentication/action';
+import {auth} from '../../firebase'
+import { setUser } from '../../Redux/Authentication/action'
+
 export const MobileNav = ({  onOpen, ...rest }) => {
+  const currentUser = useSelector((store) => {
+    // console.log(store.auth.currentUser.displayName);
+    return store.auth.currentUser.displayName;
+  })
+
+  const dispatch = useDispatch();
+  useEffect(()=> {
+    auth.onAuthStateChanged((authUser)=> {
+      if (authUser){
+        dispatch(setUser(authUser))
+      }else {
+        dispatch(setUser(null))
+      }
+    })
+  },[dispatch])
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    dispatch(logOutInitiate)
+    location.reload();
+  }
     return (
       <Flex
         ml={{ base: 0, md: 60 }}
@@ -39,7 +66,7 @@ export const MobileNav = ({  onOpen, ...rest }) => {
                     alignItems="flex-start"
                     spacing="1px"
                     ml="2">
-                    <Text fontSize="sm">Himanku Gogoi</Text>
+                    <Text fontSize="sm">{currentUser}</Text>
                     <Text fontSize="xs" color="gray.600">
                       Admin
                     </Text>
@@ -55,7 +82,7 @@ export const MobileNav = ({  onOpen, ...rest }) => {
                 <MenuItem>Profile</MenuItem>
                 <MenuItem>Settings</MenuItem>
                 <MenuDivider />
-                <MenuItem color="red">Sign out</MenuItem>
+                <MenuItem color="red" onClick={handleLogout}>Sign out</MenuItem>
               </MenuList>
             </Menu>
           </Flex>

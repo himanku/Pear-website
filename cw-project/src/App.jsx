@@ -1,19 +1,12 @@
-import ProductCard from './Components/ProductCard'
-import AllRoutes from './Pages/AllRoutes'
-import Mac from "./Pages/Mac"
-import SingleProduct from './Pages/singleProduct/SingleProduct'
-import Watch from "./Pages/Watch/Watch"
-import Cart from './Pages/Cart/Cart'
+import AllRoutes from "./Pages/AllRoutes";
 function App() {
- return (
+  return (
     <div>
-      <AllRoutes/>
-      {/* <Mac/> */}
-      {/* <Watch/> */}
-      {/* <SingleProduct/> */}
-      <Cart/>
-      </div>
-  )
+
+      <AllRoutes />
+    </div>
+  );
+
 }
 
-export default App
+export default App;
