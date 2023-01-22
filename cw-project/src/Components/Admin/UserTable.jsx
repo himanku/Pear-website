@@ -2,7 +2,7 @@ import { DeleteIcon, EditIcon } from '@chakra-ui/icons'
 import { Box, Button, Flex, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import UserTotal from './UserTotalAdd';
-import { collection, getDocs } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 // import {db} from "../../firebase"
 
 const UserTable = () => {

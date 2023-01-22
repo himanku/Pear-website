@@ -26,7 +26,7 @@ function createSlide(imageUrls) {
           src={url}
           alt=""
           style={{
-            height: "700px",
+            height: "auto",
             width: "90%",
             margin: "auto",
             marginTop: "10px",
@@ -41,9 +41,8 @@ const Swiperrr = () => {
   return (
     <div className={style.Swiper_div}>
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
+        modules={[ Pagination, Autoplay]}
         slidesPerView={1}
-        navigation
         autoplay={{ delay: 4000 }}
         pagination={{ clickable: true }}
       >
