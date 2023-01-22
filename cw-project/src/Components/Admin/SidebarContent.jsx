@@ -25,7 +25,7 @@ const SidebarContent = ({onClose, ...rest}) => {
       h="full"
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Link to="/dashboard"><Image src={logo} w={{base:"50%", md: "70%" }}/></Link>
+        <Link to="/"><Image src={logo} w={{base:"50%", md: "70%" }}/></Link>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (

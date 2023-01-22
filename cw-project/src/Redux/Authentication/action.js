@@ -1,4 +1,7 @@
 import {
+  GOOGLE_SIGN_IN_ERROR,
+  GOOGLE_SIGN_IN_START,
+  GOOGLE_SIGN_IN_SUCCESS,
   LOGIN_ERROR,
   LOGIN_START,
   LOGIN_SUCCESS,
@@ -8,6 +11,7 @@ import {
   REGISTER_ERROR,
   REGISTER_START,
   REGISTER_SUCCESS,
+  SET_USER,
 } from "./actionTypes";
 import { useNavigate } from "react-router-dom";
 import {
@@ -15,8 +19,10 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
   signInWithEmailAndPassword,
+  signInWithPopup,
+  signInWithRedirect
 } from "firebase/auth";
-import { auth } from "../../firebase";
+import { auth, googleAuthProvider } from "../../firebase";
 
 const registerStart = () => {
   return { type: REGISTER_START };
@@ -42,6 +48,19 @@ const loginFailure = (payload) => {
   return { type: LOGIN_ERROR, payload };
 };
 
+
+const googleSignInStart = () => {
+  return { type: GOOGLE_SIGN_IN_START };
+};
+
+const googleSignInSuccess = (payload) => {
+  return { type: GOOGLE_SIGN_IN_SUCCESS, payload};
+};
+
+const googleSignInFailure = (payload) => {
+  return { type: GOOGLE_SIGN_IN_ERROR, payload };
+};
+
 const userLogoutLoading = () => {
   return { type: LOGOUT_START };
 };
@@ -53,6 +72,10 @@ const userLogoutSuccess = () => {
 const userLogoutError = (payload) => {
   return { type: LOGOUT_ERROR, payload };
 };
+
+export const setUser = (payload) => {
+  return {type: SET_USER, payload};
+}
 
 export const registerInitiate =
   (email, password, displayName) => (dispatch) => {
@@ -71,6 +94,9 @@ export const registerInitiate =
       });
   };
 
+  
+
+
 export const loginInitiate = (email, password) => (dispatch) => {
   dispatch(loginStart());
   signInWithEmailAndPassword(auth, email, password)
@@ -88,4 +114,16 @@ export const logOutInitiate = (dispatch) => {
   signOut(auth)
     .then((res) => dispatch(userLogoutSuccess()))
     .catch((err) => dispatch(userLogoutError(err.message)));
+};
+
+export const googleSignInInitiate = () => (dispatch) => {
+  dispatch(googleSignInStart());
+  signInWithPopup(auth, googleAuthProvider)
+    .then((res) => {
+      console.log(user);
+      dispatch(googleSignInSuccess(res.user));
+    })
+    .catch((err) => {
+      dispatch(googleSignInFailure(err.message));
+    });
 };

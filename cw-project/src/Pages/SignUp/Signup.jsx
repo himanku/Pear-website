@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { InputControl } from "../../Components/InputControl/InputControl";
 import { useNavigate } from "react-router-dom";
 import styles from "../SignUp/Signup.module.css";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import logo from "../../assets/pear_light.png"
+import {auth} from '../../firebase'
+import { Image, useToast } from "@chakra-ui/react";
 import { GoogleButton } from "react-google-button";
-
 import { useDispatch, useSelector } from "react-redux";
 import { registerInitiate } from "../../Redux/Authentication/action";
 
@@ -15,6 +18,7 @@ export const Signup = () => {
     email: "",
     password: "",
   });
+  const toast = useToast();
   const currentUser = useSelector((store) => {
     // console.log(store.auth.currentUser.displayName);
     return store.auth.currentUser;
@@ -35,7 +39,15 @@ const dispatch = useDispatch();
 
   useEffect(()=>{
     if (currentUser){
-      alert("SignUp Successfully");
+      // alert("SignUp Successfully");
+      toast({
+        title: 'Account created.',
+        position: 'top',
+        description: "We've created your account for you.",
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+      })
       navigate('/login');
     }
   },[currentUser, navigate])
@@ -59,6 +71,9 @@ const dispatch = useDispatch();
           />
         </video>
         <div className={styles.innerBox}>
+          {/* <Image src={logo} w="100px" margin="auto"/> */}
+          <Link to="/"><Image src={logo} w="100px" margin="auto"/></Link>
+
           <h1 className={styles.heading}>Sign Up to Pear Store</h1>
           <InputControl
             label="Name"
@@ -90,7 +105,6 @@ const dispatch = useDispatch();
             <button disabled={btnDisable} onClick={handleSubmit}>
               Sign Up
             </button>
-            <GoogleButton />
             <p>
               Already have an account ?{" "}
               <span>
