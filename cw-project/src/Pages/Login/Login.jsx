@@ -25,7 +25,9 @@ export const Login = () => {
   })
 
   const handleGoogleSignIn = () => {
-    dispatch(googleSignInInitiate());
+    dispatch(googleSignInInitiate())
+    navigate("/")
+    ;
   }
 
   const Error = useSelector((store) => {

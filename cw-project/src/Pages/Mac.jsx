@@ -10,6 +10,7 @@ import data from "../../db.json"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getMacTasks } from "../Redux/Mac/action";
+import FooterHome from "../Components/Footer/Footer";
 
 const Mac = () => {
   const tasks = useSelector((store) => {
@@ -25,9 +26,9 @@ const Mac = () => {
   return (
     <div style={{ textAlign: "center" }}>
       Mac
-     {/* <Navbar/> */}
+     <Navbar/>
       <div>
-        <img src={mac} alt="mac" style={{width:"70%",margin:"auto"}}/>
+        <img src={mac} alt="mac" style={{width:"70%",margin:"30px auto 0px"}}/>
       </div>
       <div style={{backgroundColor:"skyblue",marginTop:"0px"}}>
         <h1 style={{fontSize:"12px",padding:" 5px"}}>
@@ -646,6 +647,7 @@ const Mac = () => {
           
         </div>
       </div>
+      <FooterHome/>
     </div>
   );
 };

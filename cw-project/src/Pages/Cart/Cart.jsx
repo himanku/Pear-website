@@ -5,6 +5,8 @@ import { useState } from "react";
 import axios from "axios";
 import cart1 from "./img/cart.png";
 import cart2 from "./img/cart2.png";
+import Navbar from "../../Components/Navbar/Navbar";
+import FooterHome from "../../Components/Footer/Footer";
 
 const Cart = () => {
   const [cartItem, setCartItem] = useState();
@@ -34,6 +36,7 @@ const Cart = () => {
       }}
     >
       Cart
+      <Navbar/>
       <div>
         <h1
           style={{
@@ -126,9 +129,9 @@ const Cart = () => {
               alignItems: "center",
             }}
           >
-            <h1 style={{ fontSize: "20px" }}>Total</h1>
-            <h1>
-              ₹2,597.00 <br />
+            <h1 style={{ fontSize: "30px",textAlign:"right" }}>Total</h1>
+            <h1 style={{ fontSize: "20px",textAlign:"right" }}>
+              ₹{totalPrice} <br />
               <span
                 style={{
                   color: "blue",
@@ -339,6 +342,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <FooterHome/>
     </div>
   );
 };

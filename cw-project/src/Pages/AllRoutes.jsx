@@ -17,25 +17,30 @@ import {auth} from '../firebase'
 import { setUser } from '../Redux/Authentication/action'
 import HomePage from '../Components/HomePage/HomePage'
 import { AdminPrivateRoute } from '../Components/Auth/AdminPrivateRoute'
+import Orders from './Admin/Orders'
+import EditMacPage from './Admin/EditMacPage'
+import EditPage from './Admin/EditPage'
 
 
 const AllRoutes = () => {
-  const dispatch = useDispatch();
-  useEffect(()=> {
-    auth.onAuthStateChanged((authUser)=> {
-      // console.log(authUser.email);
-      if (authUser){
-        dispatch(setUser(authUser))
-      }else {
-        dispatch(setUser(null))
-      }
-    })
-  },[dispatch])
+  // const dispatch = useDispatch();
+  // useEffect(()=> {
+  //   auth.onAuthStateChanged((authUser)=> {
+  //     // console.log(authUser.email);
+  //     if (authUser){
+  //       dispatch(setUser(authUser))
+  //     }else {
+  //       dispatch(setUser(null))
+  //     }
+  //   })
+  // },[dispatch])
   return (
     <Routes>
       <Route path='/dashboard' element={<AdminPrivateRoute><Home/></AdminPrivateRoute>}></Route>
       <Route path='/' element={<HomePage/>}></Route>
       <Route path='/products' element={<Products/>}></Route>
+      <Route path='/edit/ipad/:id' element={<EditPage/>}></Route>
+      <Route path='/edit/mac/:id' element={<EditMacPage/>}></Route>
 
       <Route path='/mac' element={<Mac/>}></Route>
       <Route path='/watch' element={<Watch/>}></Route>

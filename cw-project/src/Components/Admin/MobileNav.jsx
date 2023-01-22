@@ -12,7 +12,7 @@ import { setUser } from '../../Redux/Authentication/action'
 export const MobileNav = ({  onOpen, ...rest }) => {
   const currentUser = useSelector((store) => {
     // console.log(store.auth.currentUser.displayName);
-    return store.auth.currentUser.displayName;
+    return store.auth.currentUser?.displayName;
   })
 
   const dispatch = useDispatch();
