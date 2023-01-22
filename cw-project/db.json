@@ -69,20 +69,20 @@
   ],
   "cart": [
     {
-      "id": 11,
-      "name": "MacBook Pro++",
-      "image": "https://www.apple.com/v/mac/home/bs/images/overview/compare/compare_mbp14_and_16__f2dhysusb5im_large.png",
-      "price": "99999",
-      "description": "The ultimate MacBook experience with the most advanced technology.",
-      "review": 25
-    },
-    {
       "id": 14,
       "name": "MacBook Pro 13″",
       "image": "https://www.apple.com/v/mac/home/bs/images/overview/compare/compare_mbp13__euj5z15300om_large.png",
       "price": 98999,
       "description": "The all‑new colorful MacBook for the things you do every day.",
       "review": 51
+    },
+    {
+      "id": 13,
+      "name": "iMac Plus",
+      "image": "https://www.apple.com/v/mac/home/bs/images/overview/compare/compare_imac24__bdgus6d1xqb6_large.png",
+      "price": 154789,
+      "description": "The full Mac experience designed to perform heavy duties.",
+      "review": 42
     }
   ]
 }
