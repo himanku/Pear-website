@@ -9,13 +9,18 @@ import Users from './Admin/Users'
 import { Login } from './Login/Login'
 import { Signup } from './SignUp/Signup'
 import { Home1 } from './Home1'
+import Ipad from '../Components/iPad/Ipad'
+import Cart from './cart/Cart'
 
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route path='/dashboard' element={<Home/>}></Route>
+      <Route path='/' element={<Home/>}></Route>
       {/* <Route path='/' element={<Home1/>}></Route> */}
       <Route path='/products' element={<Products/>}></Route>
+      <Route path='/ipad' element={<Ipad/>}></Route>
+      <Route path='/cart' element={<Cart/>}></Route>
+      {/* <Route path='/iphone' element={<Products/>}></Route> */}
       <Route path='/orders' element={<Orders/>}></Route>
       <Route path='/users' element={<Users/>}></Route>
       <Route path='/login' element={<Login/>}></Route>

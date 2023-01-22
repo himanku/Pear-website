@@ -34,3 +34,125 @@
 .bey p{
     font-size: 30px;
 }
+.Big{
+    width: 50%;
+    /* border:1px solid black; */
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    align-items: center;
+}
+.bigger p{
+    font-size: 30px;
+}
+.bigger img{
+    /* margin: 80px; */
+    padding-top: 80px;
+    width: 100%;
+   
+}
+/* ------------------------ */
+.pear{
+    text-align: center;
+    margin: auto;
+    
+    height: 600px;
+    width: 90%;
+}
+.pear h1{
+    font-size: 80px;
+    color: aliceblue;
+}
+.pear h4{
+    font-size: 30px;
+    color: aliceblue;
+   }
+   .why_apple{
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    
+   }
+   .why_apple_div{
+    /* border: 1px solid red; */
+    height:600px;
+    width: 90%;
+    margin: auto;
+    
+   }
+.why_apple h1{
+padding-top: 100px;
+    color: black;
+    font-size: 50px;
+    font-weight:500px;
+    
+}
+.why_apple p{
+    padding-top: 30px;
+    color: black;
+    font-size: 20px;
+    font-weight:400px;
+    
+}
+.why_apple .img{
+    width: 80%;
+}
+/* ---------------------------------------- */
+.safe{
+    display: flex;
+    /* border: 2px solid black; */
+    width: 90%;
+    align-items: center;
+    margin: auto;
+    height: 600px;
+    background-color: aliceblue;
+}
+.safe1{
+    text-align: center;
+    /* border: 1px solid black; */
+    width: 40%;
+}
+.safe1 h1{
+    font-size: 60px;
+    font-weight: 800px;
+}
+.safe1 p{
+    font-size: 20px;
+    font-weight: 300px;
+}
+
+.safe2{
+
+    width: 60%;
+    /* border: 2px solid black; */
+    height: 500px;
+    align-items: center;
+}
+.safe img{
+    width: 90%;
+    
+}
+/* ------------------------------------ */
+.cartItem{
+    /* border: 2px solid green; */
+    width: 400px;
+    height: 400px;
+    gap: 30px;
+}
+.cartItem img{
+    
+    width: 50%;
+    height: 200px;
+}
+.cart{
+    /* border: 5px solid teal; */
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+}
+.imageComp{
+    padding-left: 120px;
+}

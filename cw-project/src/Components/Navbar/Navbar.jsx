@@ -232,7 +232,7 @@ function Navbar() {
         />
       </div>
 
-      <div style={{ backgroundColor: "white", height: "10px" }}></div>
+      <div style={{ backgroundColor: "white", height: "10px" }}></div> 
     </div>
   );
 }
