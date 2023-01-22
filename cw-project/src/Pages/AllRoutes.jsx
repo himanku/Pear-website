@@ -7,9 +7,6 @@ import { Login } from './Login/Login'
 import { Signup } from './SignUp/Signup'
 import { Home1 } from './Home1'
 import Ipad from '../Components/iPad/Ipad'
-import Cart from './cart/Cart'
-
-
 import Mac from './Mac'
 import Watch from './Watch/Watch'
 import SingleProduct from './singleProduct/SingleProduct'
@@ -26,6 +23,7 @@ import EditMacPage from './Admin/EditMacPage'
 import { Error } from './Error'
 import ScrollTop from '../Components/ScrollTop'
 import Checkout from './Checkout'
+import { Iphone } from '../Components/iPhone/Iphone'
 
 
 const AllRoutes = () => {
@@ -44,7 +42,7 @@ const AllRoutes = () => {
     <ScrollTop>
       <Routes>
         <Route path='/ipad' element={<Ipad/>}></Route>
-        <Route path='/iphone' element={<Products/>}></Route>
+        <Route path='/iphone' element={<Iphone/>}></Route>
         <Route path='/dashboard' element={<PrivateRoute><Home/></PrivateRoute>}></Route>
         <Route path='/' element={<HomePage/>}></Route>
         <Route path='/products' element={<Products/>}></Route>

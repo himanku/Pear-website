@@ -101,6 +101,30 @@
       "review": 51
     }
   ],
-    "cart": [
-  ],
+  "cart": [
+    {
+      "id": 1,
+      "name": "iPad Pro+",
+      "image": "https://www.apple.com/v/ipad/home/cd/images/overview/compare_ipad_pro__erf9x8mw04sy_small_2x.png",
+      "price": "98899",
+      "description": "The ultimate iPad experience with the most advanced technology.",
+      "review": 25
+    },
+    {
+      "id": 2,
+      "name": "iPad Air",
+      "image": "https://www.apple.com/v/ipad/home/cd/images/overview/compare_ipad_air__bxjv33pk6nte_small_2x.png",
+      "price": "80598",
+      "description": "Serious performance in a thin and light design.",
+      "review": 64
+    },
+    {
+      "id": 12,
+      "name": "MacBook Air",
+      "image": "https://www.apple.com/v/mac/home/bs/images/overview/compare/compare_mba__fchj615oz0yi_large.png",
+      "price": 120999,
+      "description": "Serious performance in a thin and light design.",
+      "review": 64
+    }
+  ]
 }
