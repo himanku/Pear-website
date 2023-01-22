@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { InputControl } from "../../Components/InputControl/InputControl";
 import styles from "../Login/login.module.css";
 import logo from "../../assets/pear_light.png"
-import { Image } from "@chakra-ui/react";
+import { Image, useToast } from "@chakra-ui/react";
 import {GoogleButton} from 'react-google-button'
 import { googleSignInInitiate, loginInitiate } from "../../Redux/Authentication/action";
 
@@ -16,8 +16,9 @@ export const Login = () => {
     email: "",
     password: "",
   });
- 
+  const toast = useToast();
   //error.code
+  
 
   const btnDisable = useSelector((store) => {
     // console.log(store.auth.btnDisabled);
@@ -48,12 +49,28 @@ const dispatch = useDispatch();
    signInWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {
         if(values.email === 'abhishek1337chatterjee@gmail.com' || values.email === 'himanku@gmail.com'){
-          alert(`Sign In Successfully as admin ${res.user.displayName}`);
+          // alert(`Sign In Successfully as admin ${res.user.displayName}`);
+          toast({
+            title: 'Admin Login Successful',
+            position: 'top',
+            description: `Welcome ${res.user.displayName}`,
+            status: 'success',
+            duration: 2000,
+            isClosable: true,
+          })
           navigate("/dashboard");
           setError("");
           return ;
         }
-          alert(`Sign In Successfully as ${res.user.displayName}`);
+          // alert(`Sign In Successfully as ${res.user.displayName}`);
+          toast({
+            title: 'Login Successful',
+            position: 'top',
+            description: `Welcome ${res.user.displayName}`,
+            status: 'success',
+            duration: 2000,
+            isClosable: true,
+          })
           navigate("/");
           setError("");
       })
@@ -61,6 +78,8 @@ const dispatch = useDispatch();
         setError(err.message);
       });
   };
+
+  
   return (
     <div>
       <div className={styles.container}>

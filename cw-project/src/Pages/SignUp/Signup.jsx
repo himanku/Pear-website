@@ -6,7 +6,7 @@ import styles from "../SignUp/Signup.module.css";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import logo from "../../assets/pear_light.png"
 import {auth} from '../../firebase'
-import { Image } from "@chakra-ui/react";
+import { Image, useToast } from "@chakra-ui/react";
 import { GoogleButton } from "react-google-button";
 import { useDispatch, useSelector } from "react-redux";
 import { registerInitiate } from "../../Redux/Authentication/action";
@@ -18,6 +18,7 @@ export const Signup = () => {
     email: "",
     password: "",
   });
+  const toast = useToast();
   const currentUser = useSelector((store) => {
     // console.log(store.auth.currentUser.displayName);
     return store.auth.currentUser;
@@ -38,7 +39,15 @@ const dispatch = useDispatch();
 
   useEffect(()=>{
     if (currentUser){
-      alert("SignUp Successfully");
+      // alert("SignUp Successfully");
+      toast({
+        title: 'Account created.',
+        position: 'top',
+        description: "We've created your account for you.",
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+      })
       navigate('/login');
     }
   },[currentUser, navigate])
