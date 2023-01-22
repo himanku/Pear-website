@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Navbar from "../Components/Navbar/Navbar";
 import ProductCard from "../Components/ProductCard";
@@ -10,22 +10,31 @@ import data from "../../db.json"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getMacTasks } from "../Redux/Mac/action";
+
 import FooterHome from "../Components/Footer/Footer";
 
+import axios from "axios";
+
+
 const Mac = () => {
+  const [data, setData] = useState(null);
   const tasks = useSelector((store) => {
     // console.log(store.auth.currentUser.displayName);
     return store.MacReducer.tasks;
   })
   const dispatch = useDispatch();
   useEffect(()=>{
-    getMacTasks(dispatch)
+      axios.get(`http://localhost:8080/mac`).then(res=>{
+        setData(res.data)
+      }).catch(err=>{
+        console.log(err);
+      })
   },[])
-  const data1=data.mac
+  // const data1=data.mac
   console.log(tasks)
   return (
     <div style={{ textAlign: "center" }}>
-      Mac
+
      <Navbar/>
       <div>
         <img src={mac} alt="mac" style={{width:"70%",margin:"30px auto 0px"}}/>
@@ -246,7 +255,7 @@ const Mac = () => {
       <div>
         <Grid templateColumns={{base:`repeat(1,1fr)`,sm:`repeat(2,1fr)`,md:`repeat(3,1fr)`,lg:`repeat(4,1fr)`}} margin={"auto"} width={"70%"}>
         
-          {tasks&&tasks?.map(el=><ProductCard key={el.id} {...el}/>)}
+          { data?.map(el=><ProductCard key={el.id} {...el}/>)}
         
         </Grid>
         {/* <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",width:"70%",margin:"auto"}}>

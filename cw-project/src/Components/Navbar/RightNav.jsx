@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { logOutInitiate } from '../../Redux/Authentication/action';
 import {auth} from '../../firebase'
 import { setUser } from '../../Redux/Authentication/action'
-import { Text } from '@chakra-ui/react';
+import { Text, useToast } from '@chakra-ui/react';
 
 
 
@@ -46,6 +46,7 @@ const Ul = styled.ul`
 `;
 
 const RightNav = ({ open }) => {
+  const toast = useToast();
   const currentUser = useSelector((store) => {
     // console.log(store.auth.currentUser.displayName);
     // if(store.auth.currentUser.displayName !== null){
@@ -67,8 +68,18 @@ const RightNav = ({ open }) => {
   },[dispatch])
   const navigate = useNavigate();
   const handleLogout = () => {
-    dispatch(logOutInitiate)
-    location.reload();
+    dispatch(logOutInitiate);
+    setInterval(() => {
+      location.reload();
+    }, 1500);
+    
+    toast({
+      title: 'Logout Successful',
+      position: 'top',
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+    })
   }
   return (
     <Ul open={open}  >
