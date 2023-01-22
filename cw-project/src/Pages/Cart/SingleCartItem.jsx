@@ -181,7 +181,7 @@ const SingleCartItem = ({
             }}
           />
           <div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",width:"100%"}}>
-            <h1 style={{fontSize:"15px",fontWeight:"bold"}}>Find out how soon you can get this item. <span style={{color:"blue"}}>Enter zip code</span></h1>
+            <h1 style={{fontSize:"15px",fontWeight:"bold"}}>Find out how soon you can get this item. <span style={{color:"#267cd3"}}>Enter zip code</span></h1>
             <div style={{display:"flex",gap:"200px"}}>
               <p>In stock and ready to ship.</p>
               <p>Pick up at an Apple Store near you.</p>

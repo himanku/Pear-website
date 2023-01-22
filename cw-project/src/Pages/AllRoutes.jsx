@@ -23,6 +23,7 @@ import EditPage from './Admin/EditPage'
 import EditMacPage from './Admin/EditMacPage'
 import { Error } from './Error'
 import ScrollTop from '../Components/ScrollTop'
+import Checkout from './Checkout'
 
 
 const AllRoutes = () => {
@@ -47,6 +48,7 @@ const AllRoutes = () => {
       <Route path='/edit/mac/:id' element={<EditMacPage/>}></Route>
 
       <Route path='/mac' element={<Mac/>}></Route>
+      <Route path='/checkout' element={<UserPrivateRoute><Checkout/></UserPrivateRoute>}></Route>
       <Route path='/watch' element={<Watch/>}></Route>
       <Route path='/singleProduct' element={<SingleProduct/>}></Route>
       <Route path='/cart' element={<UserPrivateRoute><Cart/></UserPrivateRoute>}></Route>

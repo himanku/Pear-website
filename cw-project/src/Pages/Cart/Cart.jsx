@@ -7,6 +7,7 @@ import cart1 from "./img/cart.png";
 import cart2 from "./img/cart2.png";
 import Navbar from "../../Components/Navbar/Navbar";
 import FooterHome from "../../Components/Footer/Footer";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cartItem, setCartItem] = useState();
@@ -143,6 +144,9 @@ const Cart = () => {
               </span>
             </h1>
           </div>
+        </div>
+        <div>
+          <Link to="/checkout"><button style={{fontSize:"25px",fontWeight:"bold",color:"white",backgroundColor:"#267cd3",padding:"5px 15px",borderRadius:"15px",margin:"60px auto"}}>CHECKOUT</button></Link>
         </div>
         <div>
           <img
