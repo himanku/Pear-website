@@ -1,12 +1,11 @@
 import AllRoutes from "./Pages/AllRoutes";
+
 function App() {
   return (
     <div>
-
-      <AllRoutes />
+      <AllRoutes/> 
     </div>
-  );
-
+  )
 }
 
 export default App;

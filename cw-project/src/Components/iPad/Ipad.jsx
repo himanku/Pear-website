@@ -1,9 +1,39 @@
-import { background, color, Flex, Heading } from "@chakra-ui/react";
+import { background, Button, color, Heading } from "@chakra-ui/react";
 import React from "react";
 import style from "./iPad.module.css";
 import logo from "../.././assets/pear_logo.png";
+import axios from "axios"
+import {
+  Flex,
+  Circle,
+  Box,
+  Image,
+  Badge,
+  useColorModeValue,
+  Icon,
+  chakra,
+  Tooltip,
+} from '@chakra-ui/react';
+import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
+import { FiShoppingCart } from 'react-icons/fi';
 
 const Ipad = () => {
+  const [data, setdata] = React.useState([]);
+
+  const getData = async() =>{
+    let res=await axios.get("http://localhost:8080/ipad");
+    return res.data
+  }
+
+  const handleClick=async(data)=>{
+    let res=await axios.post("http://localhost:8080/cart",data);
+    console.log(res)
+  }
+
+  React.useEffect(() => {
+    getData().then((res)=>setdata(res))
+  }, []);
+
   return (
     <div >
       <div className={style.top}>
@@ -125,6 +155,37 @@ const Ipad = () => {
             />
           </div>
         </div>
+      </div>
+      <br /><br /><br />
+
+
+      <div style={{display:'flex'}} className={style.cart}>
+        {/* <Flex p={50} w="full" alignItems="center" justifyContent="center"> */}
+      {
+        data.map((ele,i)=>{
+          return (
+            <div className={style.cartItem}>
+
+              <div className={style.imageComp}>
+
+              <img src={ele.image} alt="" />
+              <br />
+              <img  style={{width:"50px",height:"10px"}}src="https://www.apple.com/v/iphone/home/bk/images/overview/compare/swatch_iphone_14_pro__c2bl98e0li4i_large.png" alt=""/>
+              <br />
+              </div>
+              <p>{ele.name}</p>
+              <p>{ele.description}</p>
+              <p>₹{ele.price}</p>
+
+
+              <Button onClick={()=>handleClick(ele)}>Buy</Button>
+              <hr style={{FontWeight:"bold"}} />
+            </div>
+           
+          )
+        })
+      }
+      
       </div>
       {/* ------------------------------------ */}
       <br />

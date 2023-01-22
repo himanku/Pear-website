@@ -67,22 +67,40 @@
       "review": 51
     }
   ],
-  "cart": [
+  "iphone": [
     {
-      "id": 14,
-      "name": "MacBook Pro 13″",
-      "image": "https://www.apple.com/v/mac/home/bs/images/overview/compare/compare_mbp13__euj5z15300om_large.png",
-      "price": 98999,
-      "description": "The all‑new colorful MacBook for the things you do every day.",
-      "review": 51
+      "id": 1,
+      "name": "iPhone 14 Pro",
+      "image": "https://www.apple.com/v/iphone/home/bk/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_medium.jpg",
+      "price": "80,919",
+      "description": "The ultimate iPhone",
+      "review": 25
     },
     {
-      "id": 13,
-      "name": "iMac Plus",
-      "image": "https://www.apple.com/v/mac/home/bs/images/overview/compare/compare_imac24__bdgus6d1xqb6_large.png",
-      "price": 154789,
-      "description": "The full Mac experience designed to perform heavy duties.",
+      "id": 2,
+      "name": "iPhone 14",
+      "image": "https://www.apple.com/v/iphone/home/bk/images/overview/compare/compare_iphone_14__ct4sjk962pea_medium.jpg",
+      "price": "64,719",
+      "description": "A total powerhouse.",
+      "review": 64
+    },
+    {
+      "id": 3,
+      "name": "iPhone 13",
+      "image": "https://www.apple.com/v/iphone/home/bk/images/overview/compare/compare_iphone_13__fqzwhmfmroey_medium.jpg",
+      "price": "48,518",
+      "description": "As amazing as ever.",
       "review": 42
+    },
+    {
+      "id": 4,
+      "name": "iPhone SE ",
+      "image": "https://www.apple.com/v/iphone/home/bk/images/overview/compare/compare_iphone_se__d5blqx1pgymq_medium.jpg",
+      "price": "34,729",
+      "description": "Serious power. Serious value.",
+      "review": 51
     }
-  ]
+  ],
+    "cart": [
+  ],
 }
