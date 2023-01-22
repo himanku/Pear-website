@@ -11,6 +11,7 @@ import watch5 from "./img/watch5.png";
 
 import ProductCard from "../../Components/ProductCard";
 import Navbar from "../../Components/Navbar/Navbar";
+import FooterHome from "../../Components/Footer/Footer";
 
 const Watch = () => {
   const data = [
@@ -38,8 +39,8 @@ const Watch = () => {
       }}
     >
       Watch
-      {/* <Navbar/> */}
-      <div style={{ backgroundColor: "black", width: "100%" }}>
+      <Navbar/>
+      <div style={{ backgroundColor: "black", width: "100%",marginTop:"30px" }}>
         <img src={watch} alt="watch" style={{ width: "80%", margin: "auto" }} />
       </div>
       <div style={{ backgroundColor: "red", width: "100%" }}>
@@ -360,6 +361,7 @@ const Watch = () => {
         </div>
       </div>
       </div>
+      <FooterHome/>
     </div>
   );
 };

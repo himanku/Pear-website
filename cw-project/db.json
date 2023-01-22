@@ -67,5 +67,14 @@
       "review": 51
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": 13,
+      "name": "iMac Plus",
+      "image": "https://www.apple.com/v/mac/home/bs/images/overview/compare/compare_imac24__bdgus6d1xqb6_large.png",
+      "price": 154789,
+      "description": "The full Mac experience designed to perform heavy duties.",
+      "review": 42
+    }
+  ]
 }

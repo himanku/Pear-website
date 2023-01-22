@@ -31,8 +31,10 @@ export const MobileNav = ({ onOpen, ...rest }) => {
   const currentUser = useSelector((store) => {
     // console.log(store.auth.currentUser.displayName);
     return store.auth.currentUser?.displayName;
+
   });
   const toast = useToast();
+
   const dispatch = useDispatch();
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {

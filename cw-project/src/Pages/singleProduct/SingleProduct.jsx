@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CiDeliveryTruck } from 'react-icons/ci';
+import Navbar from "../../Components/Navbar/Navbar";
+import FooterHome from "../../Components/Footer/Footer";
 
 
 const SingleProduct = () => {
@@ -28,8 +30,9 @@ const SingleProduct = () => {
         textAlign: "center",
       }}
     >
-      SingleProduct
-      <div style={{backgroundColor:"#f5f5f7",width:"100%"}}>
+      {/* SingleProduct */}
+      <Navbar/>
+      <div style={{backgroundColor:"#f5f5f7",width:"100%",marginTop:"55px"}}>
         <div style={{color:"gray",padding:"15px",margin:"auto"}}>
         Pay for your new Mac over 12 months at 0% APR with Apple Card.Footnote◊ Just choose Apple Card Monthly Installments when you check out to apply.<br/> <span style={{color:"blue"}}>Learn more {">"}</span>
         </div>
@@ -97,7 +100,7 @@ const SingleProduct = () => {
             computer. Or recycle <br /> it for free.Footnote◊◊
           </span>
         </p>
-        <Link>
+        <Link to={"/cart"}>
           <button
             style={{
               backgroundColor: "#0071e3",
@@ -320,6 +323,7 @@ const SingleProduct = () => {
         </div>
       </div>
       </div>
+      <FooterHome/>
     </div>
   );
 };
