@@ -22,7 +22,7 @@ import logo from "../../assets/pear_light.png";
 
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { logOutInitiate } from "../../Redux/Authentication/action";
 import { auth } from "../../firebase";
 import { setUser } from "../../Redux/Authentication/action";
@@ -80,11 +80,13 @@ export const MobileNav = ({ onOpen, ...rest }) => {
         aria-label="open menu"
         icon={<FiMenu />}
       />
+      
       <Image
         src={logo}
         w={{ base: "28%", sm: "17%" }}
         display={{ base: "flex", md: "none" }}
       />
+   
 
       <HStack spacing={{ base: "0", md: "6" }}>
         <Flex alignItems={"center"}>

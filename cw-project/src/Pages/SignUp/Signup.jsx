@@ -71,7 +71,9 @@ const dispatch = useDispatch();
           />
         </video>
         <div className={styles.innerBox}>
-          <Image src={logo} w="100px" margin="auto"/>
+          {/* <Image src={logo} w="100px" margin="auto"/> */}
+          <Link to="/"><Image src={logo} w="100px" margin="auto"/></Link>
+
           <h1 className={styles.heading}>Sign Up to Pear Store</h1>
           <InputControl
             label="Name"

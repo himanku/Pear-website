@@ -20,7 +20,7 @@ const Cart = () => {
 
       
   }, []);
-  const sumAge = () => cartItem&&cartItem?.reduce((sum, el) => { return sum + el.price;}, 0);
+  const sumAge = () => cartItem&&cartItem?.reduce((sum, el) => { return sum + Number(el.price)}, 0);
 
  const totalPrice=sumAge();
   console.log(sumAge());
@@ -112,7 +112,7 @@ const Cart = () => {
             <div>
               <p>₹{totalPrice}</p>
               <p>FREE</p>
-              <p>₹-</p>
+              <p>₹0</p>
             </div>
           </div>
           <hr

@@ -22,6 +22,7 @@ import Orders from './Admin/Orders'
 import EditPage from './Admin/EditPage'
 import EditMacPage from './Admin/EditMacPage'
 import { Error } from './Error'
+import ScrollTop from '../Components/ScrollTop'
 
 
 const AllRoutes = () => {
@@ -37,6 +38,7 @@ const AllRoutes = () => {
     })
   },[dispatch])
   return (
+    <ScrollTop>
     <Routes>
       <Route path='/dashboard' element={<PrivateRoute><Home/></PrivateRoute>}></Route>
       <Route path='/' element={<HomePage/>}></Route>
@@ -55,6 +57,7 @@ const AllRoutes = () => {
       <Route path='/signup' element={<Signup/>}></Route>
       <Route path='*' element={<Error/>}></Route>
     </Routes>
+    </ScrollTop>
   )
 }
 

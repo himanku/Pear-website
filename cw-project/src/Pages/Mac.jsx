@@ -37,7 +37,7 @@ const Mac = () => {
 
      <Navbar/>
       <div>
-        <img src={mac} alt="mac" style={{width:"70%",margin:"30px auto 0px"}}/>
+        <img src={mac} alt="mac" style={{width:"70%",margin:"50px auto 0px"}}/>
       </div>
       <div style={{backgroundColor:"skyblue",marginTop:"0px"}}>
         <h1 style={{fontSize:"12px",padding:" 5px"}}>
