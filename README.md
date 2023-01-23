@@ -74,6 +74,19 @@
 <h3>Users can explore Mac computers and add them to their cart.</h3>
 <br/>
 
+## iPad Page :
+![pear-ipad](https://user-images.githubusercontent.com/57268357/214036904-2397d61f-3a54-4554-bd88-5dfa6fcae47e.PNG)
+
+<br/>
+<h3>Users can explore iPad Tablets and add them to their cart.</h3>
+<br/>
+
+## iPhone Page :
+![pear-iphone](https://user-images.githubusercontent.com/57268357/214037023-0cb90ccb-d31f-4b8b-afa0-b6d486af3c86.PNG)
+
+<br/>
+<h3>Users can explore iPhone mobiles and add them to their cart.</h3>
+<br/>
 
 ## Cart Page :
 ![pear-6PNG](https://user-images.githubusercontent.com/57268357/214032533-527704dd-e845-4eab-866d-5243f21af4da.PNG)
