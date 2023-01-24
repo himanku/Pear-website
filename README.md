@@ -136,17 +136,17 @@
 ## Our Learnings
 On this journey we faced many issues, but we keep motivated each other with patience. 
 
-- We learned the importance of pre-planning.
+- We learnt the importance of pre-planning in any project.
 
-- We all learned how to read and understand the code of other team members.
+- We learnt how to read and understand the code of other team members.
 
-- We learned the step by step execution of the project.
+- We learnt the step by step execution of the project.
 
-- We learned the importance of effective communication, online-collaboration and team-work.
+- We learnt the importance of effective communication, online-collaboration and team-work.
 
-- We learnt to resolve code conflicts in GitHub.
+- We learnt how to resolve code conflicts in GitHub.
 
-Source Code (GitHub link):- https://github.com/himanku/nutty-way-5713
+Source Code (GitHub link) - https://github.com/himanku/nutty-way-5713
 
 
 ### Thank you
